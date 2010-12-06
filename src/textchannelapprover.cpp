@@ -66,7 +66,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
     notification->setText(msg.text());
 
     if (sender) {
-        notification->setTitle(i18n("Incoming message from %1", sender->alias()));
+        notification->setTitle(sender->alias());
 
         QPixmap pixmap;
         if (pixmap.load(sender->avatarData().fileName)) {
