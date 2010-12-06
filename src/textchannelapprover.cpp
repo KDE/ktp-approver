@@ -21,10 +21,13 @@
 #include <KLocale>
 #include <KGlobal>
 #include <KDebug>
+#include <KPluginFactory>
 #include <TelepathyQt4/ReceivedMessage>
 #include <TelepathyQt4/AvatarData>
 #include <TelepathyQt4/ContactManager>
 #include <TelepathyQt4/PendingContacts>
+
+K_PLUGIN_FACTORY_DECLARATION(TpKDEApproverFactory)
 
 TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent), m_notifierItem(getNotifierItem())
@@ -59,6 +62,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
     }
 
     KNotification *notification = new KNotification("new_text_message");
+    notification->setComponentData(TpKDEApproverFactory::componentData());
     notification->setText(msg.text());
 
     if (sender) {
