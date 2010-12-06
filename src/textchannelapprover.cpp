@@ -20,8 +20,11 @@
 #include <KStatusNotifierItem>
 #include <KLocale>
 #include <KGlobal>
+#include <KDebug>
 #include <TelepathyQt4/ReceivedMessage>
 #include <TelepathyQt4/AvatarData>
+#include <TelepathyQt4/ContactManager>
+#include <TelepathyQt4/PendingContacts>
 
 TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent), m_notifierItem(getNotifierItem())
@@ -47,10 +50,17 @@ TextChannelApprover::~TextChannelApprover()
 
 void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 {
+    Tp::ContactPtr sender = msg.sender();
+    if (sender && (!sender->actualFeatures().contains(Tp::Contact::FeatureAlias) ||
+                   !sender->actualFeatures().contains(Tp::Contact::FeatureAvatarData)))
+    {
+        new MessageReceivedContactUpgrader(msg, this);
+        return;
+    }
+
     KNotification *notification = new KNotification("new_text_message");
     notification->setText(msg.text());
 
-    Tp::ContactPtr sender = msg.sender();
     if (sender) {
         notification->setTitle(i18n("Incoming message from %1", sender->alias()));
 
@@ -110,5 +120,29 @@ void TextChannelApprover::updateNotifierItemTooltip()
                                QString());
 }
 
+
+MessageReceivedContactUpgrader::MessageReceivedContactUpgrader(const Tp::ReceivedMessage & msg,
+                                                               TextChannelApprover *parent)
+    : QObject(parent), m_msg(msg), m_parent(parent)
+{
+    Tp::PendingContacts *pc = msg.sender()->manager()->upgradeContacts(
+        QList<Tp::ContactPtr>() << msg.sender(),
+        Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData
+    );
+
+    connect(pc, SIGNAL(finished(Tp::PendingOperation*)),
+            SLOT(onUpgradeContactsFinished(Tp::PendingOperation*)));
+}
+
+void MessageReceivedContactUpgrader::onUpgradeContactsFinished(Tp::PendingOperation *operation)
+{
+    if (operation->isError()) {
+        kError() << "Could not upgrade contact" << operation->errorName()
+                                                << operation->errorMessage();
+    } else {
+        m_parent->onMessageReceived(m_msg);
+    }
+    deleteLater();
+}
 
 #include "textchannelapprover.moc"
