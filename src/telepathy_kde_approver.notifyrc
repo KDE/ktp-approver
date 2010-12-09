@@ -1,0 +1,10 @@
+[Global]
+IconName=kopete
+Name=Instant messaging
+Comment=Instant messaging
+
+[Event/new_text_message]
+Name=Incoming message
+Comment=A new instant message has been received
+Sound=KDE-Im-Message-In.ogg
+Action=Popup|Sound
