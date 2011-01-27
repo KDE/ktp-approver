@@ -36,13 +36,12 @@ public:
 
 private Q_SLOTS:
     void onMessageReceived(const Tp::ReceivedMessage & msg);
-    void onNotificationDestroyed(QObject *notification);
 
 private:
     static QSharedPointer<KStatusNotifierItem> getNotifierItem();
     void updateNotifierItemTooltip();
 
-    QSet<KNotification*> m_notifications;
+    QWeakPointer<KNotification> m_notification;
     QSharedPointer<KStatusNotifierItem> m_notifierItem;
 
     friend class MessageReceivedContactUpgrader;

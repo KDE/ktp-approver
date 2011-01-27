@@ -46,11 +46,10 @@ TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QOb
 
 TextChannelApprover::~TextChannelApprover()
 {
-    //destroy the notifications
-    Q_FOREACH(KNotification *notification, m_notifications) {
-        notification->close();
+    //destroy the notification
+    if (m_notification) {
+        m_notification.data()->close();
     }
-    m_notifications.clear();
 }
 
 void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
@@ -63,35 +62,28 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
         return;
     }
 
-    KNotification *notification = new KNotification("new_text_message");
-    notification->setComponentData(TpKDEApproverFactory::componentData());
-    notification->setText(msg.text());
+    if (!m_notification) {
+        m_notification = new KNotification("new_text_message");
+        m_notification.data()->setComponentData(TpKDEApproverFactory::componentData());
 
-    if (sender) {
-        notification->setTitle(sender->alias());
+        if (sender) {
+            m_notification.data()->setTitle(sender->alias());
 
-        QPixmap pixmap;
-        if (pixmap.load(sender->avatarData().fileName)) {
-            notification->setPixmap(pixmap);
+            QPixmap pixmap;
+            if (pixmap.load(sender->avatarData().fileName)) {
+                m_notification.data()->setPixmap(pixmap);
+            }
+        } else {
+            m_notification.data()->setTitle(i18n("Incoming message"));
         }
-    } else {
-        notification->setTitle(i18n("Incoming message"));
+
+        m_notification.data()->setActions(QStringList() << i18n("Respond"));
+        connect(m_notification.data(), SIGNAL(activated()), SIGNAL(channelAccepted()));
     }
 
-    notification->setActions(QStringList() << i18n("Respond"));
-    connect(notification, SIGNAL(activated()), SIGNAL(channelAccepted()));
-
-    notification->sendEvent();
-
-    m_notifications.insert(notification);
-    connect(notification, SIGNAL(destroyed(QObject*)), SLOT(onNotificationDestroyed(QObject*)));
+    m_notification.data()->setText(msg.text());
+    m_notification.data()->sendEvent();
 }
-
-void TextChannelApprover::onNotificationDestroyed(QObject *notification)
-{
-    m_notifications.remove(reinterpret_cast<KNotification*>(notification));
-}
-
 
 K_GLOBAL_STATIC(QWeakPointer<KStatusNotifierItem>, s_notifierItem)
 
