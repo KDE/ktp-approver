@@ -54,18 +54,11 @@ TextChannelApprover::~TextChannelApprover()
 
 void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 {
-    Tp::ContactPtr sender = msg.sender();
-    if (sender && (!sender->actualFeatures().contains(Tp::Contact::FeatureAlias) ||
-                   !sender->actualFeatures().contains(Tp::Contact::FeatureAvatarData)))
-    {
-        new MessageReceivedContactUpgrader(msg, this);
-        return;
-    }
-
     if (!m_notification) {
         m_notification = new KNotification("new_text_message");
         m_notification.data()->setComponentData(TpKDEApproverFactory::componentData());
 
+        Tp::ContactPtr sender = msg.sender();
         if (sender) {
             m_notification.data()->setTitle(sender->alias());
 
@@ -116,31 +109,6 @@ void TextChannelApprover::updateNotifierItemTooltip()
                                      "You have %1 incoming conversations",
                                      channelsCount.toUInt()),
                                QString());
-}
-
-
-MessageReceivedContactUpgrader::MessageReceivedContactUpgrader(const Tp::ReceivedMessage & msg,
-                                                               TextChannelApprover *parent)
-    : QObject(parent), m_msg(msg), m_parent(parent)
-{
-    Tp::PendingContacts *pc = msg.sender()->manager()->upgradeContacts(
-        QList<Tp::ContactPtr>() << msg.sender(),
-        Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData
-    );
-
-    connect(pc, SIGNAL(finished(Tp::PendingOperation*)),
-            SLOT(onUpgradeContactsFinished(Tp::PendingOperation*)));
-}
-
-void MessageReceivedContactUpgrader::onUpgradeContactsFinished(Tp::PendingOperation *operation)
-{
-    if (operation->isError()) {
-        kError() << "Could not upgrade contact" << operation->errorName()
-                                                << operation->errorMessage();
-    } else {
-        m_parent->onMessageReceived(m_msg);
-    }
-    deleteLater();
 }
 
 #include "textchannelapprover.moc"

@@ -43,25 +43,6 @@ private:
 
     QWeakPointer<KNotification> m_notification;
     QSharedPointer<KStatusNotifierItem> m_notifierItem;
-
-    friend class MessageReceivedContactUpgrader;
-};
-
-
-/* This code is a temporary solution until tp-qt4 implements contact factories */
-class MessageReceivedContactUpgrader : public QObject
-{
-    Q_OBJECT
-public:
-    explicit MessageReceivedContactUpgrader(const Tp::ReceivedMessage & msg,
-                                            TextChannelApprover *parent);
-
-private Q_SLOTS:
-    void onUpgradeContactsFinished(Tp::PendingOperation *operation);
-
-private:
-    Tp::ReceivedMessage m_msg;
-    TextChannelApprover *m_parent;
 };
 
 #endif //TEXTCHANNELAPPROVER_H
