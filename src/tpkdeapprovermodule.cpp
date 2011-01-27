@@ -16,12 +16,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "approverdaemon.h"
+#include "tpkdeapproverfactory.h"
 
 #include <KAboutData>
 #include <KLocale>
 #include <KComponentData>
 #include <KDEDModule>
-#include <KPluginFactory>
 
 #include <TelepathyQt4/Types>
 #include <TelepathyQt4/Debug>
@@ -78,5 +78,5 @@ private:
     Tp::ClientRegistrarPtr m_registrar;
 };
 
-K_PLUGIN_FACTORY(TpKDEApproverFactory, registerPlugin<TpKDEApproverModule>();)
+K_PLUGIN_FACTORY_DEFINITION(TpKDEApproverFactory, registerPlugin<TpKDEApproverModule>();)
 K_EXPORT_PLUGIN(TpKDEApproverFactory(TpKDEApproverModule::aboutData()))

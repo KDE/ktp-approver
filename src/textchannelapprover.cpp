@@ -16,18 +16,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "textchannelapprover.h"
+#include "tpkdeapproverfactory.h"
 #include <KNotification>
 #include <KStatusNotifierItem>
 #include <KLocale>
 #include <KGlobal>
 #include <KDebug>
-#include <KPluginFactory>
 #include <TelepathyQt4/ReceivedMessage>
 #include <TelepathyQt4/AvatarData>
 #include <TelepathyQt4/ContactManager>
 #include <TelepathyQt4/PendingContacts>
-
-K_PLUGIN_FACTORY_DECLARATION(TpKDEApproverFactory)
 
 TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent), m_notifierItem(getNotifierItem())
