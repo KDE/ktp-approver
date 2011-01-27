@@ -40,6 +40,8 @@ TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QOb
             SLOT(onMessageReceived(Tp::ReceivedMessage)));
     connect(m_notifierItem.data(), SIGNAL(activateRequested(bool,QPoint)),
             SIGNAL(channelAccepted()));
+
+    updateNotifierItemTooltip();
 }
 
 TextChannelApprover::~TextChannelApprover()
@@ -83,8 +85,6 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 
     m_notifications.insert(notification);
     connect(notification, SIGNAL(destroyed(QObject*)), SLOT(onNotificationDestroyed(QObject*)));
-
-    updateNotifierItemTooltip();
 }
 
 void TextChannelApprover::onNotificationDestroyed(QObject *notification)
@@ -106,7 +106,7 @@ QSharedPointer<KStatusNotifierItem> TextChannelApprover::getNotifierItem()
         notifierItem->setIconByName(QLatin1String("mail-unread"));
         notifierItem->setAttentionIconByName(QLatin1String("mail-unread-new"));
         notifierItem->setStandardActionsEnabled(false);
-        notifierItem->setProperty("approver_new_messages_count", 0U);
+        notifierItem->setProperty("approver_new_channels_count", 0U);
         *s_notifierItem = notifierItem;
     }
 
@@ -115,12 +115,14 @@ QSharedPointer<KStatusNotifierItem> TextChannelApprover::getNotifierItem()
 
 void TextChannelApprover::updateNotifierItemTooltip()
 {
-    QVariant numMessages = m_notifierItem->property("approver_new_messages_count");
-    numMessages = QVariant(numMessages.toUInt() + 1);
-    m_notifierItem->setProperty("approver_new_messages_count", numMessages);
+    QVariant channelsCount = m_notifierItem->property("approver_new_channels_count");
+    channelsCount = QVariant(channelsCount.toUInt() + 1);
+    m_notifierItem->setProperty("approver_new_channels_count", channelsCount);
 
     m_notifierItem->setToolTip(QLatin1String("mail-unread-new"),
-                               i18n("You have %1 new unread messages", numMessages.toUInt()),
+                               i18np("You have 1 incoming conversation",
+                                     "You have %1 incoming conversations",
+                                     channelsCount.toUInt()),
                                QString());
 }
 
