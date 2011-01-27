@@ -22,8 +22,9 @@
 
 class ApproverDaemon : public QObject, public Tp::AbstractClientApprover
 {
+    Q_OBJECT
 public:
-    ApproverDaemon();
+    ApproverDaemon(QObject *parent = 0);
 
 protected:
     virtual void addDispatchOperation(const Tp::MethodInvocationContextPtr<> & context,

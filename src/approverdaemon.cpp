@@ -35,8 +35,8 @@ static inline Tp::ChannelClassSpecList channelClassSpecList()
                 ;
 }
 
-ApproverDaemon::ApproverDaemon()
-    : QObject(), AbstractClientApprover(channelClassSpecList())
+ApproverDaemon::ApproverDaemon(QObject *parent)
+    : QObject(parent), AbstractClientApprover(channelClassSpecList())
 {
 }
 
@@ -46,3 +46,5 @@ void ApproverDaemon::addDispatchOperation(const Tp::MethodInvocationContextPtr<>
     new DispatchOperation(dispatchOperation, this);
     context->setFinished();
 }
+
+#include "approverdaemon.moc"
