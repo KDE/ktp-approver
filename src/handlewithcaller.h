@@ -31,6 +31,7 @@ private Q_SLOTS:
     void onHandleWithFinished(Tp::PendingOperation *operation);
 
 private:
+    void findHandlers();
     void callHandleWith();
 
     Tp::ChannelDispatchOperationPtr m_dispatchOperation;
