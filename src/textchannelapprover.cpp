@@ -40,58 +40,43 @@ TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QOb
             SLOT(onMessageReceived(Tp::ReceivedMessage)));
     connect(m_notifierItem.data(), SIGNAL(activateRequested(bool,QPoint)),
             SIGNAL(channelAccepted()));
-}
-
-TextChannelApprover::~TextChannelApprover()
-{
-    //destroy the notifications
-    Q_FOREACH(KNotification *notification, m_notifications) {
-        notification->close();
-    }
-    m_notifications.clear();
-}
-
-void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
-{
-    Tp::ContactPtr sender = msg.sender();
-    if (sender && (!sender->actualFeatures().contains(Tp::Contact::FeatureAlias) ||
-                   !sender->actualFeatures().contains(Tp::Contact::FeatureAvatarData)))
-    {
-        new MessageReceivedContactUpgrader(msg, this);
-        return;
-    }
-
-    KNotification *notification = new KNotification("new_text_message");
-    notification->setComponentData(TpKDEApproverFactory::componentData());
-    notification->setText(msg.text());
-
-    if (sender) {
-        notification->setTitle(sender->alias());
-
-        QPixmap pixmap;
-        if (pixmap.load(sender->avatarData().fileName)) {
-            notification->setPixmap(pixmap);
-        }
-    } else {
-        notification->setTitle(i18n("Incoming message"));
-    }
-
-    notification->setActions(QStringList() << i18n("Respond"));
-    connect(notification, SIGNAL(activated()), SIGNAL(channelAccepted()));
-
-    notification->sendEvent();
-
-    m_notifications.insert(notification);
-    connect(notification, SIGNAL(destroyed(QObject*)), SLOT(onNotificationDestroyed(QObject*)));
 
     updateNotifierItemTooltip();
 }
 
-void TextChannelApprover::onNotificationDestroyed(QObject *notification)
+TextChannelApprover::~TextChannelApprover()
 {
-    m_notifications.remove(reinterpret_cast<KNotification*>(notification));
+    //destroy the notification
+    if (m_notification) {
+        m_notification.data()->close();
+    }
 }
 
+void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
+{
+    if (!m_notification) {
+        m_notification = new KNotification("new_text_message");
+        m_notification.data()->setComponentData(TpKDEApproverFactory::componentData());
+
+        Tp::ContactPtr sender = msg.sender();
+        if (sender) {
+            m_notification.data()->setTitle(sender->alias());
+
+            QPixmap pixmap;
+            if (pixmap.load(sender->avatarData().fileName)) {
+                m_notification.data()->setPixmap(pixmap);
+            }
+        } else {
+            m_notification.data()->setTitle(i18n("Incoming message"));
+        }
+
+        m_notification.data()->setActions(QStringList() << i18n("Respond"));
+        connect(m_notification.data(), SIGNAL(activated()), SIGNAL(channelAccepted()));
+    }
+
+    m_notification.data()->setText(msg.text());
+    m_notification.data()->sendEvent();
+}
 
 K_GLOBAL_STATIC(QWeakPointer<KStatusNotifierItem>, s_notifierItem)
 
@@ -106,7 +91,7 @@ QSharedPointer<KStatusNotifierItem> TextChannelApprover::getNotifierItem()
         notifierItem->setIconByName(QLatin1String("mail-unread"));
         notifierItem->setAttentionIconByName(QLatin1String("mail-unread-new"));
         notifierItem->setStandardActionsEnabled(false);
-        notifierItem->setProperty("approver_new_messages_count", 0U);
+        notifierItem->setProperty("approver_new_channels_count", 0U);
         *s_notifierItem = notifierItem;
     }
 
@@ -115,38 +100,15 @@ QSharedPointer<KStatusNotifierItem> TextChannelApprover::getNotifierItem()
 
 void TextChannelApprover::updateNotifierItemTooltip()
 {
-    QVariant numMessages = m_notifierItem->property("approver_new_messages_count");
-    numMessages = QVariant(numMessages.toUInt() + 1);
-    m_notifierItem->setProperty("approver_new_messages_count", numMessages);
+    QVariant channelsCount = m_notifierItem->property("approver_new_channels_count");
+    channelsCount = QVariant(channelsCount.toUInt() + 1);
+    m_notifierItem->setProperty("approver_new_channels_count", channelsCount);
 
     m_notifierItem->setToolTip(QLatin1String("mail-unread-new"),
-                               i18n("You have %1 new unread messages", numMessages.toUInt()),
+                               i18np("You have 1 incoming conversation",
+                                     "You have %1 incoming conversations",
+                                     channelsCount.toUInt()),
                                QString());
-}
-
-
-MessageReceivedContactUpgrader::MessageReceivedContactUpgrader(const Tp::ReceivedMessage & msg,
-                                                               TextChannelApprover *parent)
-    : QObject(parent), m_msg(msg), m_parent(parent)
-{
-    Tp::PendingContacts *pc = msg.sender()->manager()->upgradeContacts(
-        QList<Tp::ContactPtr>() << msg.sender(),
-        Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData
-    );
-
-    connect(pc, SIGNAL(finished(Tp::PendingOperation*)),
-            SLOT(onUpgradeContactsFinished(Tp::PendingOperation*)));
-}
-
-void MessageReceivedContactUpgrader::onUpgradeContactsFinished(Tp::PendingOperation *operation)
-{
-    if (operation->isError()) {
-        kError() << "Could not upgrade contact" << operation->errorName()
-                                                << operation->errorMessage();
-    } else {
-        m_parent->onMessageReceived(m_msg);
-    }
-    deleteLater();
 }
 
 #include "textchannelapprover.moc"
