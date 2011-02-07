@@ -16,17 +16,61 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "handlewithcaller.h"
+#include "tpkdeapproverfactory.h"
+#include <KConfig>
+#include <KConfigGroup>
+#include <KDebug>
 #include <TelepathyQt4/PendingOperation>
+#include <TelepathyQt4/Channel>
 
 HandleWithCaller::HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
                                    QObject *parent)
     : QObject(parent)
 {
     m_dispatchOperation = dispatchOperation;
-    m_possibleHandlers = dispatchOperation->possibleHandlers();
+
+    findHandlers();
     Q_ASSERT(!m_possibleHandlers.isEmpty());
 
     callHandleWith();
+}
+
+void HandleWithCaller::findHandlers()
+{
+    KConfig config(TpKDEApproverFactory::componentData());
+    KConfigGroup group(&config, "HandlerPreferences");
+
+    //realistically, dispatch operations only have one channel
+    //FIXME if there ever exists a case where a dispatch operation has more
+    //than one channels, fix this code to do something more appropriate
+    QString channelType = m_dispatchOperation->channels()[0]->channelType();
+
+    QStringList preferredHandlers = group.readEntry(channelType, QStringList());
+    QStringList possibleHandlers = m_dispatchOperation->possibleHandlers();
+
+    kDebug() << "Preferred:" << preferredHandlers;
+    kDebug() << "Possible:" << possibleHandlers;
+
+    //intersect the two lists, while respecting the order
+    //of preference that was read from the config file
+    QStringList::iterator it = preferredHandlers.begin();
+    while(it != preferredHandlers.end()) {
+        int index = possibleHandlers.indexOf(*it);
+        if (index != -1) {
+            possibleHandlers.removeAt(index);
+            ++it;
+        } else {
+            it = preferredHandlers.erase(it);
+        }
+    }
+
+    //preferredHandlers now contains the intersection. Because the intersection
+    //can lead to an empty list, we append the rest of the possible handlers
+    //to make sure it is not going to be empty.
+    preferredHandlers.append(possibleHandlers);
+
+    m_possibleHandlers = preferredHandlers;
+    kDebug() << "Final:" << m_possibleHandlers;
 }
 
 void HandleWithCaller::callHandleWith()

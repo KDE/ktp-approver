@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2010 Collabora Ltd. <info@collabora.co.uk>
+    Copyright (C) 2011 Collabora Ltd. <info@collabora.co.uk>
       @author George Kiagiadakis <george.kiagiadakis@collabora.co.uk>
 
     This library is free software; you can redistribute it and/or modify
@@ -15,27 +15,11 @@
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef HANDLEWITHCALLER_H
-#define HANDLEWITHCALLER_H
+#ifndef TPKDEAPPROVERFACTORY_H
+#define TPKDEAPPROVERFACTORY_H
 
-#include <QtCore/QObject>
-#include <TelepathyQt4/ChannelDispatchOperation>
+#include <KPluginFactory>
 
-class HandleWithCaller : public QObject
-{
-    Q_OBJECT
-public:
-    HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispatchOperation, QObject *parent);
+K_PLUGIN_FACTORY_DECLARATION(TpKDEApproverFactory)
 
-private Q_SLOTS:
-    void onHandleWithFinished(Tp::PendingOperation *operation);
-
-private:
-    void findHandlers();
-    void callHandleWith();
-
-    Tp::ChannelDispatchOperationPtr m_dispatchOperation;
-    QStringList m_possibleHandlers;
-};
-
-#endif //HANDLEWITHCALLER_H
+#endif //TPKDEAPPROVERFACTORY_H

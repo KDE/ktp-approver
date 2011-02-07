@@ -1,0 +1,2 @@
+[HandlerPreferences]
+org.freedesktop.Telepathy.Channel.Type.Text=org.freedesktop.Telepathy.Client.KDEChatHandler
