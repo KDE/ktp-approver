@@ -1,10 +1,29 @@
 [Global]
 IconName=kopete
 Name=Instant messaging
+Name[nl]=Instant Messaging
+Name[pt]=Mensagem instantânea
+Name[sv]=Direktmeddelanden
+Name[uk]=Миттєвий обмін повідомленнями
+Name[x-test]=xxInstant messagingxx
 Comment=Instant messaging
+Comment[nl]=Instant Messaging
+Comment[pt]=Mensagem instantânea
+Comment[sv]=Direktmeddelanden
+Comment[uk]=Миттєвий обмін повідомленнями
+Comment[x-test]=xxInstant messagingxx
 
 [Event/new_text_message]
 Name=Incoming message
+Name[nl]=Inkomend bericht
+Name[pt]=Mensagem recebida
+Name[sv]=Inkommande meddelande
+Name[uk]=Вхідне повідомлення
+Name[x-test]=xxIncoming messagexx
 Comment=A new instant message has been received
+Comment[pt]=Foi recebida uma nova mensagem instantânea
+Comment[sv]=Ett nytt direktmeddelande har tagits emot
+Comment[uk]=Отримано нове повідомлення
+Comment[x-test]=xxA new instant message has been receivedxx
 Sound=KDE-Im-Message-In.ogg
 Action=Popup|Sound
