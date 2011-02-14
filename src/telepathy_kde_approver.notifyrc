@@ -15,6 +15,7 @@ Comment[x-test]=xxInstant messagingxx
 
 [Event/new_text_message]
 Name=Incoming message
+Name[cs]=Příchozí zpráva
 Name[nl]=Inkomend bericht
 Name[pt]=Mensagem recebida
 Name[sv]=Inkommande meddelande
