@@ -1,11 +1,13 @@
 [Desktop Entry]
 Name=Telepathy KDE Approver
 Name[pt]=Aprovador do KDE Telepathy
+Name[pt_BR]=Aprovador do KDE Telepathy
 Name[sv]=Telepathy KDE-godkännande
 Name[uk]=Засіб підтвердження викликів Telepathy у KDE
 Name[x-test]=xxTelepathy KDE Approverxx
 Comment=Shows notifications for incoming IM/Call requests and allows you to open a handler to answer
 Comment[pt]=Mostra as notificações dos pedidos de MI/chamadas recebidos e permite-lhe abrir um módulo de resposta
+Comment[pt_BR]=Mostra as notificações dos pedidos de MI/chamadas recebidos e permite-lhe abrir um módulo de resposta
 Comment[sv]=Visar underrättelser för inkommande direktmeddelanden eller samtal och låter dig öppna ett hanteringsverktyg för att svara
 Comment[uk]=Показує сповіщення щодо вхідних запитів щодо обміну повідомленнями або розмов і надає вам змогу відкрити панель відповіді
 Comment[x-test]=xxShows notifications for incoming IM/Call requests and allows you to open a handler to answerxx
