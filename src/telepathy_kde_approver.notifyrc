@@ -28,6 +28,7 @@ Name[sv]=Inkommande meddelande
 Name[uk]=Вхідне повідомлення
 Name[x-test]=xxIncoming messagexx
 Comment=A new instant message has been received
+Comment[nl]=Een nieuw "instant message" is ontvangen
 Comment[pt]=Foi recebida uma nova mensagem instantânea
 Comment[pt_BR]=Foi recebida uma nova mensagem instantânea
 Comment[sv]=Ett nytt direktmeddelande har tagits emot
