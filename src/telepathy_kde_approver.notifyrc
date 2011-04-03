@@ -1,6 +1,7 @@
 [Global]
 IconName=kopete
 Name=Instant messaging
+Name[da]=Instant messaging
 Name[de]=Instant Messaging
 Name[nds]=Kortnarichten
 Name[nl]=Instant Messaging
@@ -10,6 +11,7 @@ Name[sv]=Direktmeddelanden
 Name[uk]=Миттєвий обмін повідомленнями
 Name[x-test]=xxInstant messagingxx
 Comment=Instant messaging
+Comment[da]=Instant messaging
 Comment[de]=Instant Messaging
 Comment[nds]=Kortnarichten
 Comment[nl]=Instant Messaging
@@ -22,6 +24,7 @@ Comment[x-test]=xxInstant messagingxx
 [Event/new_text_message]
 Name=Incoming message
 Name[cs]=Příchozí zpráva
+Name[da]=Indkommende besked
 Name[de]=Eingehende Nachricht
 Name[nds]=Ankamen Naricht
 Name[nl]=Inkomend bericht
@@ -31,6 +34,7 @@ Name[sv]=Inkommande meddelande
 Name[uk]=Вхідне повідомлення
 Name[x-test]=xxIncoming messagexx
 Comment=A new instant message has been received
+Comment[da]=En ny besked er blevet modtaget
 Comment[nl]=Een nieuw "instant message" is ontvangen
 Comment[pt]=Foi recebida uma nova mensagem instantânea
 Comment[pt_BR]=Foi recebida uma nova mensagem instantânea
