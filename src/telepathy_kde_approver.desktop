@@ -21,5 +21,5 @@ Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=telepathy_kde_approver
 X-KDE-DBus-ModuleName=telepathy_kde_approver
-X-KDE-Kded-autoload=false
-X-KDE-Kded-load-on-demand=true
+X-KDE-Kded-autoload=true
+X-KDE-Kded-load-on-demand=false
