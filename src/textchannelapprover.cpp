@@ -69,7 +69,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
         }
 
         m_notification.data()->setActions(QStringList() << i18n("Respond"));
-        connect(m_notification.data(), SIGNAL(activated()), SIGNAL(channelAccepted()));
+        connect(m_notification.data(), SIGNAL(action1Activated()), SIGNAL(channelAccepted()));
     }
 
     m_notification.data()->setText(msg.text());
