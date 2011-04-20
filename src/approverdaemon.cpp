@@ -24,14 +24,9 @@ static inline Tp::ChannelClassSpecList channelClassSpecList()
 {
     return Tp::ChannelClassSpecList()
                 << Tp::ChannelClassSpec::textChat()
-#if 0
                 << Tp::ChannelClassSpec::unnamedTextChat()
                 << Tp::ChannelClassSpec::textChatroom()
-                << Tp::ChannelClassSpec::streamedMediaCall()
-                << Tp::ChannelClassSpec::streamedMediaAudioCall()
-                << Tp::ChannelClassSpec::streamedMediaVideoCall()
                 << Tp::ChannelClassSpec::incomingFileTransfer()
-#endif
                 ;
 }
 
