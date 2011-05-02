@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2010 Collabora Ltd. <info@collabora.co.uk>
+    Copyright (C) 2010-2011 Collabora Ltd. <info@collabora.co.uk>
       @author George Kiagiadakis <george.kiagiadakis@collabora.co.uk>
 
     This library is free software; you can redistribute it and/or modify
@@ -15,24 +15,26 @@
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef FILETRANSFERCHANNELAPPROVER_H
+#define FILETRANSFERCHANNELAPPROVER_H
+
 #include "channelapprover.h"
-#include "textchannelapprover.h"
-#include "filetransferchannelapprover.h"
+#include <QtCore/QSharedPointer>
+#include <TelepathyQt4/IncomingFileTransferChannel>
 
-ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject *parent)
+class KStatusNotifierItem;
+class KNotification;
+
+class FileTransferChannelApprover : public ChannelApprover
 {
-    if (channel->channelType() == TP_QT4_IFACE_CHANNEL_TYPE_TEXT) {
-        return new TextChannelApprover(Tp::TextChannelPtr::dynamicCast(channel), parent);
-    }
+    Q_OBJECT
+public:
+    FileTransferChannelApprover(const Tp::FileTransferChannelPtr & channel, QObject *parent);
+    virtual ~FileTransferChannelApprover();
 
-    if (channel->channelType() == TP_QT4_IFACE_CHANNEL_TYPE_FILE_TRANSFER) {
-        return new FileTransferChannelApprover(
-                Tp::FileTransferChannelPtr::dynamicCast(channel),
-                parent);
-    }
+private:
+    QWeakPointer<KNotification> m_notification;
+    KStatusNotifierItem *m_notifierItem;
+};
 
-    Q_ASSERT(false);
-    return NULL;
-}
-
-#include "channelapprover.moc"
+#endif //FILETRANSFERCHANNELAPPROVER_H

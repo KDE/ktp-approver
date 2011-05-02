@@ -5,6 +5,7 @@ set(telepathy_kde_approver_SRCS
     handlewithcaller.cpp
     channelapprover.cpp
     textchannelapprover.cpp
+    filetransferchannelapprover.cpp
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})

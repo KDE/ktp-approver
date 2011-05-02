@@ -28,6 +28,7 @@
 #include <TelepathyQt4/ClientRegistrar>
 #include <TelepathyQt4/Channel>
 #include <TelepathyQt4/TextChannel>
+#include <TelepathyQt4/IncomingFileTransferChannel>
 
 class TpKDEApproverModule : public KDEDModule
 {
@@ -52,6 +53,8 @@ public:
         channelFactory->addFeaturesForTextChats(Tp::Features()
                                                     << Tp::TextChannel::FeatureCore
                                                     << Tp::TextChannel::FeatureMessageQueue);
+        channelFactory->addFeaturesForIncomingFileTransfers(
+                Tp::IncomingFileTransferChannel::FeatureCore);
 
         Tp::ContactFactoryPtr contactFactory =
             Tp::ContactFactory::create(Tp::Features()
