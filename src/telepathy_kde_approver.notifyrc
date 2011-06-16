@@ -1,6 +1,7 @@
 [Global]
 IconName=telepthy
 Name=Instant messaging
+Name[cs]=IM
 Name[da]=Instant messaging
 Name[de]=Instant Messaging
 Name[et]=Kiirsuhtlus
@@ -12,6 +13,7 @@ Name[sv]=Direktmeddelanden
 Name[uk]=Миттєвий обмін повідомленнями
 Name[x-test]=xxInstant messagingxx
 Comment=Instant messaging
+Comment[cs]=IM
 Comment[da]=Instant messaging
 Comment[de]=Instant Messaging
 Comment[et]=Kiirsuhtlus
@@ -37,6 +39,7 @@ Name[sv]=Inkommande meddelande
 Name[uk]=Вхідне повідомлення
 Name[x-test]=xxIncoming messagexx
 Comment=A new instant message has been received
+Comment[cs]=Byla obdržena nová IM zpráva
 Comment[da]=En ny besked er blevet modtaget
 Comment[et]=Saadi uus kiirsuhtlussõnum
 Comment[nl]=Een nieuw "instant message" is ontvangen
