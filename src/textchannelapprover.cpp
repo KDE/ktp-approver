@@ -54,10 +54,10 @@ TextChannelApprover::~TextChannelApprover()
 void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 {
     if (!m_notification) {
-        m_notification = new KNotification("new_text_message");     
+        m_notification = new KNotification("new_text_message");
         KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
         m_notification.data()->setComponentData(KComponentData(aboutData));
-        
+
         Tp::ContactPtr sender = msg.sender();
         if (sender) {
             m_notification.data()->setTitle(sender->alias());
