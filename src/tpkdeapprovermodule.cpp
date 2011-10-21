@@ -64,7 +64,7 @@ public:
         m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
                                                   channelFactory, contactFactory);
         m_registrar->registerClient(Tp::SharedPtr<ApproverDaemon>(new ApproverDaemon()),
-                                    "telepathy_kde_approver");
+                                    "KDE.Approver");
     }
 
     static inline KAboutData aboutData()
