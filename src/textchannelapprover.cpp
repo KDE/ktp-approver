@@ -74,7 +74,13 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
         connect(m_notification.data(), SIGNAL(action1Activated()), SIGNAL(channelAccepted()));
     }
 
-    m_notification.data()->setText(msg.text());
+    if (msg.text().length() > 170) {
+        //search for the closest space in text
+        QString truncatedMsg = msg.text().left(msg.text().indexOf(QLatin1Char(' '), 150)).append(QLatin1String("..."));
+        m_notification.data()->setText(truncatedMsg);
+    } else {
+        m_notification.data()->setText(msg.text());
+    }
     m_notification.data()->sendEvent();
 }
 
