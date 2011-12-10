@@ -20,7 +20,7 @@
 
 #include "channelapprover.h"
 #include <QtCore/QSharedPointer>
-#include <TelepathyQt4/IncomingFileTransferChannel>
+#include <TelepathyQt/IncomingFileTransferChannel>
 
 class KStatusNotifierItem;
 class KNotification;

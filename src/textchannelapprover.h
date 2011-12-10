@@ -21,8 +21,8 @@
 #include "channelapprover.h"
 #include <QtCore/QSet>
 #include <QtCore/QSharedPointer>
-#include <TelepathyQt4/TextChannel>
-#include <TelepathyQt4/ReceivedMessage>
+#include <TelepathyQt/TextChannel>
+#include <TelepathyQt/ReceivedMessage>
 
 class KStatusNotifierItem;
 class KNotification;

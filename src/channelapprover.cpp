@@ -21,11 +21,11 @@
 
 ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject *parent)
 {
-    if (channel->channelType() == TP_QT4_IFACE_CHANNEL_TYPE_TEXT) {
+    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_TEXT) {
         return new TextChannelApprover(Tp::TextChannelPtr::dynamicCast(channel), parent);
     }
 
-    if (channel->channelType() == TP_QT4_IFACE_CHANNEL_TYPE_FILE_TRANSFER) {
+    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_FILE_TRANSFER) {
         return new FileTransferChannelApprover(
                 Tp::FileTransferChannelPtr::dynamicCast(channel),
                 parent);

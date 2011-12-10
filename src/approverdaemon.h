@@ -18,7 +18,7 @@
 #ifndef APPROVERDAEMON_H
 #define APPROVERDAEMON_H
 
-#include <TelepathyQt4/AbstractClientApprover>
+#include <TelepathyQt/AbstractClientApprover>
 
 class ApproverDaemon : public QObject, public Tp::AbstractClientApprover
 {

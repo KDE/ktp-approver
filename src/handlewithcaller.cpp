@@ -20,8 +20,8 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KDebug>
-#include <TelepathyQt4/PendingOperation>
-#include <TelepathyQt4/Channel>
+#include <TelepathyQt/PendingOperation>
+#include <TelepathyQt/Channel>
 
 HandleWithCaller::HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
                                    QObject *parent)
@@ -83,9 +83,9 @@ void HandleWithCaller::callHandleWith()
 void HandleWithCaller::onHandleWithFinished(Tp::PendingOperation* operation)
 {
     if (operation->isError()) {
-        if (operation->errorName() == TP_QT4_ERROR_INVALID_ARGUMENT ||
-            operation->errorName() == TP_QT4_ERROR_NOT_AVAILABLE ||
-            operation->errorName() == TP_QT4_ERROR_NOT_IMPLEMENTED)
+        if (operation->errorName() == TP_QT_ERROR_INVALID_ARGUMENT ||
+            operation->errorName() == TP_QT_ERROR_NOT_AVAILABLE ||
+            operation->errorName() == TP_QT_ERROR_NOT_IMPLEMENTED)
         {
             //remove the handler that we just tried and try the next one
             m_possibleHandlers.removeFirst();

@@ -19,7 +19,7 @@
 #include "channelapprover.h"
 #include "handlewithcaller.h"
 #include <KDebug>
-#include <TelepathyQt4/PendingOperation>
+#include <TelepathyQt/PendingOperation>
 
 DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
                                      QObject *parent)

@@ -17,8 +17,8 @@
 */
 #include "approverdaemon.h"
 #include "dispatchoperation.h"
-#include <TelepathyQt4/ChannelClassSpec>
-#include <TelepathyQt4/ChannelDispatchOperation>
+#include <TelepathyQt/ChannelClassSpec>
+#include <TelepathyQt/ChannelDispatchOperation>
 
 static inline Tp::ChannelClassSpecList channelClassSpecList()
 {

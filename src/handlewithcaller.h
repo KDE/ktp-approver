@@ -19,7 +19,7 @@
 #define HANDLEWITHCALLER_H
 
 #include <QtCore/QObject>
-#include <TelepathyQt4/ChannelDispatchOperation>
+#include <TelepathyQt/ChannelDispatchOperation>
 
 class HandleWithCaller : public QObject
 {
