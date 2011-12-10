@@ -19,7 +19,7 @@
 #define CHANNELAPPROVER_H
 
 #include <QtCore/QObject>
-#include <TelepathyQt4/Channel>
+#include <TelepathyQt/Channel>
 
 class ChannelApprover : public QObject
 {

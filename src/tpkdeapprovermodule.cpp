@@ -23,12 +23,12 @@
 #include <KComponentData>
 #include <KDEDModule>
 
-#include <TelepathyQt4/Types>
-#include <TelepathyQt4/Debug>
-#include <TelepathyQt4/ClientRegistrar>
-#include <TelepathyQt4/Channel>
-#include <TelepathyQt4/TextChannel>
-#include <TelepathyQt4/IncomingFileTransferChannel>
+#include <TelepathyQt/Types>
+#include <TelepathyQt/Debug>
+#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/Channel>
+#include <TelepathyQt/TextChannel>
+#include <TelepathyQt/IncomingFileTransferChannel>
 
 class TpKDEApproverModule : public KDEDModule
 {

@@ -19,7 +19,7 @@
 #define DISPATCHOPERATION_H
 
 #include <QtCore/QObject>
-#include <TelepathyQt4/ChannelDispatchOperation>
+#include <TelepathyQt/ChannelDispatchOperation>
 
 class ChannelApprover;
 

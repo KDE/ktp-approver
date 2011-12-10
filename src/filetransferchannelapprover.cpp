@@ -23,8 +23,8 @@
 #include <KAboutData>
 #include <KActionCollection>
 #include <KMenu>
-#include <TelepathyQt4/AvatarData>
-#include <TelepathyQt4/Contact>
+#include <TelepathyQt/AvatarData>
+#include <TelepathyQt/Contact>
 
 FileTransferChannelApprover::FileTransferChannelApprover(
         const Tp::FileTransferChannelPtr & channel,

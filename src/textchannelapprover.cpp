@@ -23,10 +23,10 @@
 #include <KGlobal>
 #include <KDebug>
 #include <KAboutData>
-#include <TelepathyQt4/ReceivedMessage>
-#include <TelepathyQt4/AvatarData>
-#include <TelepathyQt4/ContactManager>
-#include <TelepathyQt4/PendingContacts>
+#include <TelepathyQt/ReceivedMessage>
+#include <TelepathyQt/AvatarData>
+#include <TelepathyQt/ContactManager>
+#include <TelepathyQt/PendingContacts>
 
 TextChannelApprover::TextChannelApprover(const Tp::TextChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent), m_notifierItem(getNotifierItem())
