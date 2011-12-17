@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.freedesktop.Telepathy.Client.KDE.Approver
-Exec=/usr/bin/dbus-send --session --type=method_call --dest=org.kde.kded /kded org.kde.kded.loadModule string:"telepathy_kde_approver"
