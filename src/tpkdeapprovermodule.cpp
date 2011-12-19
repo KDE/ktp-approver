@@ -71,7 +71,7 @@ public:
     {
         KAboutData aboutData("telepathy_kde_approver", "telepathy-kde-approver", KLocalizedString(), "0.1",
                              KLocalizedString(), KAboutData::License_LGPL,
-                             ki18n("(C) 2010, Collabora Ltd."));
+                             ki18nc("@info:credit", "(C) 2010, Collabora Ltd."));
         aboutData.addAuthor(ki18nc("@info:credit", "George Kiagiadakis"),
                             KLocalizedString(), "george.kiagiadakis@collabora.co.uk");
         return aboutData;
