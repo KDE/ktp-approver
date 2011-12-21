@@ -2,6 +2,7 @@
 Name=Telepathy KDE Approver
 Name[cs]=Schvalovatel KDE Telepathy
 Name[da]=Telepathy KDE-godkender
+Name[es]=Aprobador de KDE para Telepathy
 Name[et]=Telepathy KDE heakskiitja
 Name[fr]=Approbateur KDE pour Telepathy
 Name[hu]=Telepathy KDE Approver
@@ -17,6 +18,7 @@ Name[x-test]=xxTelepathy KDE Approverxx
 Comment=Shows notifications for incoming IM/Call requests and allows you to open a handler to answer
 Comment[cs]=Zobrazuje upozornění pro příchozí IM/Hovory a umožňuje vám otevřít správce pro odpověď
 Comment[da]=Viser bekendtgørelser for indkommende IM- og opkaldsanmodninger og lader dig åbner en håndtering til at svare med
+Comment[es]=Muestra notificaciones de peticiones entrantes de MI o llamadas y le permite abrir un manipulador para responder
 Comment[et]=Sisenevate kiirsuhtlus- ja kõnesoovide märguannete näitamine ning neile vastamiseks käitleja avamine
 Comment[fr]=Affiche des notifications des requêtes de MI / d'appels entrants et permet d'ouvrir un module de réponse
 Comment[hu]=Értesítéseket jelenít meg bejövő azonnali üzeneteknél és hívásoknál, és lehetővé teszi egy kezelő megnyitását válaszoláshoz
