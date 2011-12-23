@@ -69,7 +69,7 @@ public:
 
     static inline KAboutData aboutData()
     {
-        KAboutData aboutData("telepathy_kde_approver", "telepathy-kde-approver", KLocalizedString(), "0.1",
+        KAboutData aboutData("ktp-approver", "kded_ktp_approver", KLocalizedString(), "0.2.60",
                              KLocalizedString(), KAboutData::License_LGPL,
                              ki18nc("@info:credit", "(C) 2010, Collabora Ltd."));
         aboutData.addAuthor(ki18nc("@info:credit", "George Kiagiadakis"),

@@ -1,4 +1,4 @@
-project(telepathy_kde_approver)
+project(ktp-approver)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
