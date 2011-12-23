@@ -64,7 +64,7 @@ public:
         m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
                                                   channelFactory, contactFactory);
         m_registrar->registerClient(Tp::SharedPtr<ApproverDaemon>(new ApproverDaemon()),
-                                    "KDE.Approver");
+                                    "KTp.Approver");
     }
 
     static inline KAboutData aboutData()
