@@ -15,11 +15,11 @@
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef TPKDEAPPROVERFACTORY_H
-#define TPKDEAPPROVERFACTORY_H
+#ifndef KTPAPPROVERFACTORY_H
+#define KTPAPPROVERFACTORY_H
 
 #include <KPluginFactory>
 
-K_PLUGIN_FACTORY_DECLARATION(TpKDEApproverFactory)
+K_PLUGIN_FACTORY_DECLARATION(KTpApproverFactory)
 
-#endif //TPKDEAPPROVERFACTORY_H
+#endif //KTPAPPROVERFACTORY_H

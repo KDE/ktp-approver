@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "textchannelapprover.h"
-#include "tpkdeapproverfactory.h"
+#include "ktpapproverfactory.h"
 #include <KNotification>
 #include <KStatusNotifierItem>
 #include <KLocale>

@@ -1,5 +1,5 @@
 set(ktp_approver_SRCS
-    tpkdeapprovermodule.cpp
+    ktpapprovermodule.cpp
     approverdaemon.cpp
     dispatchoperation.cpp
     handlewithcaller.cpp

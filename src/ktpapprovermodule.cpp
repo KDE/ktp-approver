@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "approverdaemon.h"
-#include "tpkdeapproverfactory.h"
+#include "ktpapproverfactory.h"
 
 #include <KAboutData>
 #include <KLocale>
@@ -30,10 +30,10 @@
 #include <TelepathyQt/TextChannel>
 #include <TelepathyQt/IncomingFileTransferChannel>
 
-class TpKDEApproverModule : public KDEDModule
+class KTpApproverModule : public KDEDModule
 {
 public:
-    TpKDEApproverModule(QObject *parent, const QVariantList & args)
+    KTpApproverModule(QObject *parent, const QVariantList & args)
         : KDEDModule(parent)
     {
         Q_UNUSED(args);
@@ -81,5 +81,5 @@ private:
     Tp::ClientRegistrarPtr m_registrar;
 };
 
-K_PLUGIN_FACTORY_DEFINITION(TpKDEApproverFactory, registerPlugin<TpKDEApproverModule>();)
-K_EXPORT_PLUGIN(TpKDEApproverFactory(TpKDEApproverModule::aboutData()))
+K_PLUGIN_FACTORY_DEFINITION(KTpApproverFactory, registerPlugin<KTpApproverModule>();)
+K_EXPORT_PLUGIN(KTpApproverFactory(KTpApproverModule::aboutData()))

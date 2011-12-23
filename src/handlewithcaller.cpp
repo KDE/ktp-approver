@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "handlewithcaller.h"
-#include "tpkdeapproverfactory.h"
+#include "ktpapproverfactory.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <KDebug>
@@ -37,7 +37,7 @@ HandleWithCaller::HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispa
 
 void HandleWithCaller::findHandlers()
 {
-    KConfig config(TpKDEApproverFactory::componentData());
+    KConfig config(KTpApproverFactory::componentData());
     KConfigGroup group(&config, "HandlerPreferences");
 
     //realistically, dispatch operations only have one channel
