@@ -12,7 +12,6 @@ Name[uk]=Підтверджувач обміну повідомленнями
 Name[x-test]=xxInstant Messaging Approverxx
 Name[zh_TW]=即時訊息確認器
 Comment=Shows notifications for incoming IM/Call requests and allows you to open a handler to answer
-Comment[cs]=Zobrazuje upozornění pro příchozí IM/Hovory a umožňuje vám otevřít správce pro odpověď
 Comment[da]=Viser bekendtgørelser for indkommende IM- og opkaldsanmodninger og lader dig åbne en håndtering til at svare med
 Comment[es]=Muestra notificaciones de solicitudes de mensajes y llamadas y le permite abrir un manipulador para responder.
 Comment[et]=Sisenevate kiirsuhtlus- ja kõnesoovide märguannete näitamine ning neile vastamiseks käitleja avamine
