@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Instant Messaging Approver
 Name[da]=Godkender til instant messaging
+Name[el]=Πρόγραμμα έγκρισης στιγμιαίων μηνυμάτων
 Name[es]=Aprobador de mensajes instantáneos
 Name[et]=Kiirsuhtluse märguandja
 Name[hu]=Azonnali üzenetküldési fogadó
@@ -15,6 +16,7 @@ Name[x-test]=xxInstant Messaging Approverxx
 Name[zh_TW]=即時訊息確認器
 Comment=Shows notifications for incoming IM/Call requests and allows you to open a handler to answer
 Comment[da]=Viser bekendtgørelser for indkommende IM- og opkaldsanmodninger og lader dig åbne en håndtering til at svare med
+Comment[el]=Εμφανίζει ειδοποιήσεις για αιτήσεις εισερχόμενων στιγμιαίων μηνυμάτων / κλήσεων και σας επιτρέπει να ανοίξετε ένα χειριστή για να απαντήσετε
 Comment[es]=Muestra notificaciones de solicitudes de mensajes y llamadas y le permite abrir un manipulador para responder.
 Comment[et]=Sisenevate kiirsuhtlus- ja kõnesoovide märguannete näitamine ning neile vastamiseks käitleja avamine
 Comment[fr]=Affiche des notifications des requêtes de MI / d'appels entrants et permet d'ouvrir un module de réponse
