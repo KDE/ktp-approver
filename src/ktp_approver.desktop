@@ -45,5 +45,5 @@ Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=ktp_approver
 X-KDE-DBus-ModuleName=ktp_approver
-X-KDE-Kded-autoload=true
-X-KDE-Kded-load-on-demand=false
+X-KDE-Kded-autoload=false
+X-KDE-Kded-load-on-demand=true
