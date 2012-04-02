@@ -16,8 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "channelapprover.h"
+
 #include "textchannelapprover.h"
 #include "filetransferchannelapprover.h"
+#include "streamtubechannelapprover.h"
 
 ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject *parent)
 {
@@ -28,6 +30,11 @@ ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject
     if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_FILE_TRANSFER) {
         return new FileTransferChannelApprover(
                 Tp::FileTransferChannelPtr::dynamicCast(channel),
+                parent);
+    }
+
+    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_STREAM_TUBE) {
+        return new StreamTubeChannelApprover(Tp::StreamTubeChannelPtr::dynamicCast(channel),
                 parent);
     }
 

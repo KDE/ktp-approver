@@ -6,6 +6,7 @@ set(ktp_approver_SRCS
     channelapprover.cpp
     textchannelapprover.cpp
     filetransferchannelapprover.cpp
+    streamtubechannelapprover.cpp
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
