@@ -40,7 +40,7 @@ StreamTubeChannelApprover::StreamTubeChannelApprover(
     connect(m_channel.data(), SIGNAL(invalidated(Tp::DBusProxy*,QString,QString)), SLOT(onChannelInvalidated()));
 
     if (m_channel->service() == QLatin1String("x-ssh-contact")) {
-        m_serviceName = i18n("SSH");
+        m_serviceName = i18nc("Acronym for the secure shell service","SSH");
     } else {
         m_serviceName = m_channel->service();
     }
@@ -73,7 +73,7 @@ StreamTubeChannelApprover::StreamTubeChannelApprover(
     m_notifierItem->setStatus(KStatusNotifierItem::NeedsAttention);
     m_notifierItem->setIconByName(QLatin1String("utilities-terminal"));
     m_notifierItem->setStandardActionsEnabled(false);
-    m_notifierItem->setTitle(i18n("Incoming file transfer"));
+    m_notifierItem->setTitle(i18n("Incoming share request"));
     m_notifierItem->setToolTip(QLatin1String("document-save"),
                                i18n("Incoming share request from %1", sender->alias()),
                                QString());
@@ -103,6 +103,7 @@ void StreamTubeChannelApprover::onChannelAccepted()
         m_notification.data()->close();
     }
 
+    m_notifierItem->setTitle(i18n("%1 share with %2", m_serviceName, m_channel->initiatorContact()->alias()));
     //set new menu to an entry to close the channel
     m_notifierItem->contextMenu()->clear();
     m_notifierItem->contextMenu()->addAction(KIcon("dialog-close"), i18n("Stop %1 Sharing", m_serviceName), this, SLOT(onChannelCloseRequested()));
