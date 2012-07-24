@@ -41,7 +41,7 @@ public:
         Q_UNUSED(args);
 
         Tp::registerTypes();
-        Tp::enableDebug(true);
+        Tp::enableDebug(false);
         Tp::enableWarnings(true);
 
         Tp::AccountFactoryPtr accountFactory =
