@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=Instant Messaging Approver
-Name[bs]=Potvrđivač instant poruka
 Name[ca]=Aprovador de missatgeria instantània
 Name[cs]=Schvalovač komunikátoru
 Name[da]=Godkender til instant messaging
@@ -35,7 +34,6 @@ Name[x-test]=xxInstant Messaging Approverxx
 Name[zh_CN]=即时通讯接收
 Name[zh_TW]=即時訊息確認器
 Comment=Shows notifications for incoming IM/Call requests and allows you to open a handler to answer
-Comment[bs]=Prikazuje obavještenja za dolazne zahtjeve  IM / poziv i omogućava vam da otvorite rukovaoca da odgovori
 Comment[ca]=Mostra les notificacions de les peticions de MI/trucades entrants i us permet obrir un gestor per contestar
 Comment[cs]=Zobrazuje upozornění pro příchozí IM/Hovory a umožňuje Vám otevřít správce pro odpověď
 Comment[da]=Viser bekendtgørelser for indkommende IM- og opkaldsanmodninger og lader dig åbne en håndtering til at svare med
