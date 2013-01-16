@@ -35,6 +35,7 @@ StreamTubeChannelApprover::StreamTubeChannelApprover(
 
       m_channel(channel)
 {
+    Q_UNUSED(parent);
     kDebug();
 
     connect(m_channel.data(), SIGNAL(invalidated(Tp::DBusProxy*,QString,QString)), SLOT(onChannelInvalidated()));
