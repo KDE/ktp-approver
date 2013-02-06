@@ -30,6 +30,7 @@
 #include <TelepathyQt/TextChannel>
 #include <TelepathyQt/IncomingFileTransferChannel>
 #include <TelepathyQt/IncomingStreamTubeChannel>
+#include <TelepathyQt/IncomingDBusTubeChannel>
 
 
 class KTpApproverModule : public KDEDModule
@@ -60,6 +61,9 @@ public:
 
         channelFactory->addFeaturesForIncomingStreamTubes(
                     Tp::IncomingStreamTubeChannel::FeatureCore);
+
+        channelFactory->addFeaturesForIncomingDBusTubes(
+                    Tp::IncomingDBusTubeChannel::FeatureCore);
 
         Tp::ContactFactoryPtr contactFactory =
             Tp::ContactFactory::create(Tp::Features()

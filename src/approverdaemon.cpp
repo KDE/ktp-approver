@@ -27,7 +27,8 @@ static inline Tp::ChannelClassSpecList channelClassSpecList()
                 << Tp::ChannelClassSpec::unnamedTextChat()
                 << Tp::ChannelClassSpec::textChatroom()
                 << Tp::ChannelClassSpec::incomingFileTransfer()
-                << Tp::ChannelClassSpec::incomingStreamTube("x-ssh-contact")
+                << Tp::ChannelClassSpec::incomingStreamTube()
+                << Tp::ChannelClassSpec::incomingDBusTube()
                 ;
 }
 

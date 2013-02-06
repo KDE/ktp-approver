@@ -19,7 +19,7 @@
 
 #include "textchannelapprover.h"
 #include "filetransferchannelapprover.h"
-#include "streamtubechannelapprover.h"
+#include "tubechannelapprover.h"
 
 ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject *parent)
 {
@@ -33,9 +33,9 @@ ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject
                 parent);
     }
 
-    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_STREAM_TUBE) {
-        return new StreamTubeChannelApprover(Tp::StreamTubeChannelPtr::dynamicCast(channel),
-                parent);
+    if ((channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_STREAM_TUBE) ||
+        (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_DBUS_TUBE)) {
+        return new TubeChannelApprover(Tp::TubeChannelPtr::dynamicCast(channel), parent);
     }
 
     Q_ASSERT(false);

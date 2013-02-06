@@ -1,5 +1,6 @@
 /*
     Copyright (C) 2012  David Edmundson <kde@davidedmundson.co.uk>
+    Copyright (C) 2013  Dan Vrátil <dvratil@redhat.com>
 
     This library is free software; you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published
@@ -14,32 +15,38 @@
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef STREAMTUBECHANNELAPPROVER_H
-#define STREAMTUBECHANNELAPPROVER_H
+#ifndef TUBECHANNELAPPROVER_H
+#define TUBECHANNELAPPROVER_H
 
 #include "channelapprover.h"
-#include <QtCore/QSharedPointer>
-#include <TelepathyQt/StreamTubeChannel>
+
+#include <KNotification>
+#include <KService>
+#include <TelepathyQt/TubeChannel>
 
 class KStatusNotifierItem;
-class KNotification;
 
-class StreamTubeChannelApprover : public ChannelApprover
+class TubeChannelApprover : public ChannelApprover
 {
     Q_OBJECT
-public:
-    StreamTubeChannelApprover(const Tp::StreamTubeChannelPtr & channel, QObject *parent);
-    virtual ~StreamTubeChannelApprover();
-private Q_SLOTS:
+
+  public:
+    TubeChannelApprover(const Tp::TubeChannelPtr &channel, QObject* parent);
+    virtual ~TubeChannelApprover();
+
+  private Q_SLOTS:
     void onChannelAccepted();
     void onChannelCloseRequested();
     void onChannelInvalidated();
 
-private:
+  private:
+    void showNotification(const QString &title, const QString &comment, const QString &icon,
+                          const Tp::ContactPtr &sender);
+
+    Tp::TubeChannelPtr m_channel;
     QWeakPointer<KNotification> m_notification;
-    KStatusNotifierItem *m_notifierItem;
-    Tp::StreamTubeChannelPtr m_channel;
-    QString m_serviceName;
+    QWeakPointer<KStatusNotifierItem> m_notifierItem;
+    KService::Ptr m_service;
 };
 
-#endif //STREAMTUBECHANNELAPPROVER_H
+#endif // TUBECHANNELAPPROVER_H

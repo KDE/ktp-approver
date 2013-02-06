@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=ServiceType
+X-KDE-ServiceType=KTpApprover
+Comment=KTp Approver
+
+[PropertyDef::X-KTp-ChannelType]
+Type=QString
+
+[PropertyDef::X-KTp-Service]
+Type=QString
+
+[PropertyDef::X-KTp-Preferred-Incoming-Handler]
+Type=QString
+
+[PropertyDef::X-KTp-Preferred-Outgoing-Handler]
+Type=QString
+
+[PropertyDef::X-KTp-Cancellable]
+Type=bool

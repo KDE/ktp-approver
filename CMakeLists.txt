@@ -9,3 +9,5 @@ include_directories(${KDE4_INCLUDES} ${TELEPATHY_QT4_INCLUDE_DIR})
 add_definitions(${KDE4_DEFINITIONS})
 
 add_subdirectory(src)
+
+install(FILES ktp-approver.service DESTINATION ${SERVICETYPES_INSTALL_DIR})
