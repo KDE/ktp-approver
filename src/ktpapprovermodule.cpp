@@ -78,7 +78,7 @@ public:
 
     static inline KAboutData aboutData()
     {
-        KAboutData aboutData("ktp-approver", "kded_ktp_approver", KLocalizedString(), "0.5.2",
+        KAboutData aboutData("ktp-approver", "kded_ktp_approver", KLocalizedString(), "0.5.3",
                              KLocalizedString(), KAboutData::License_LGPL,
                              ki18nc("@info:credit", "(C) 2010, Collabora Ltd."));
         aboutData.addAuthor(ki18nc("@info:credit", "George Kiagiadakis"),
