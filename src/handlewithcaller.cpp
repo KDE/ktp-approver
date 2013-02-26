@@ -17,7 +17,7 @@
 */
 #include "handlewithcaller.h"
 #include "ktpapproverfactory.h"
-#include <KConfig>
+#include <KSharedConfig>
 #include <KConfigGroup>
 #include <KDebug>
 #include <TelepathyQt/PendingOperation>
@@ -37,8 +37,8 @@ HandleWithCaller::HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispa
 
 void HandleWithCaller::findHandlers()
 {
-    KConfig config(KTpApproverFactory::componentData());
-    KConfigGroup group(&config, "HandlerPreferences");
+    KSharedConfigPtr config = KSharedConfig::openConfig(KTpApproverFactory::componentData());
+    KConfigGroup group = config->group("HandlerPreferences");
 
     //realistically, dispatch operations only have one channel
     //FIXME if there ever exists a case where a dispatch operation has more
