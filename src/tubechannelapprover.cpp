@@ -136,7 +136,7 @@ void TubeChannelApprover::onChannelAccepted()
         m_notification.data()->close();
     }
 
-    if (m_service->property(QLatin1String("X-KTp-Cancellable")).toBool()) {
+    if (!m_service.isNull() && m_service->property(QLatin1String("X-KTp-Cancellable")).toBool()) {
         m_notifierItem.data()->setTitle(i18n("%1 share with %2", m_service->name(), m_channel->initiatorContact()->alias()));
         //set new menu to an entry to close the channel
         m_notifierItem.data()->contextMenu()->clear();
