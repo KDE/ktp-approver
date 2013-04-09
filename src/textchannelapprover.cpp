@@ -53,6 +53,10 @@ TextChannelApprover::~TextChannelApprover()
 
 void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 {
+    if (msg.isDeliveryReport()) {
+        return;
+    }
+
     if (!m_notification) {
         m_notification = new KNotification("new_text_message");
         KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
