@@ -78,15 +78,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
         connect(m_notification.data(), SIGNAL(action1Activated()), SIGNAL(channelAccepted()));
     }
 
-    // Remove empty lines from message
-    QString notifyText = msg.text().simplified();
-    if (notifyText.length() > 170) {
-        //search for the closest space in text
-        QString truncatedMsg = notifyText.left(notifyText.indexOf(QLatin1Char(' '), 150)).append(QLatin1String("..."));
-        m_notification.data()->setText(truncatedMsg);
-    } else {
-        m_notification.data()->setText(notifyText);
-    }
+    m_notification.data()->setText(msg.text().simplified());
     m_notification.data()->sendEvent();
 }
 
