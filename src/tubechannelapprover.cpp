@@ -55,25 +55,25 @@ TubeChannelApprover::TubeChannelApprover(const Tp::TubeChannelPtr& channel, QObj
 
     KService::List services = KServiceTypeTrader::self()->query(QLatin1String("KTpApprover"));
     kDebug() << "Found" << services.count() << "KTpApprover services";
-    if (services.isEmpty()) {
-        showNotification(i18n("Unknown Incoming Tube"), i18n("Incoming tube from %1 of an unknown type"),
-                         QLatin1String("dialog-warning"), channel->initiatorContact());
-        return;
-    }
+    if (!services.isEmpty()) {
+        Q_FOREACH(const KService::Ptr &service, services) {
+            if ((service->property(QLatin1String("X-KTp-ChannelType")) != channel->channelType()) ||
+                (service->property(QLatin1String("X-KTp-Service")) != serviceName)) {
 
-    Q_FOREACH(const KService::Ptr &service, services) {
-        if ((service->property(QLatin1String("X-KTp-ChannelType")) != channel->channelType()) ||
-            (service->property(QLatin1String("X-KTp-Service")) != serviceName)) {
-            continue;
+                continue;
+            }
+            m_service = service;
         }
-
-        m_service = service;
     }
+
 
     if (!m_service) {
         kDebug() << "No service to match" << channel->channelType() << "," << serviceName;
-        showNotification(i18n("Incoming Request"), i18n("%1 wants to start a remote service with you"),
-                         QLatin1String("dialog-warning"), channel->initiatorContact());
+        showNotification(i18n("Unknown Incoming Connection"),
+                         i18n("%1 wants to start an unknown service with you", channel->initiatorContact()->alias()),
+                         QLatin1String("dialog-warning"),
+                         channel->initiatorContact());
+
         return;
     }
 
