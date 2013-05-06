@@ -21,6 +21,9 @@
 #include <KDebug>
 #include <TelepathyQt/PendingOperation>
 
+#include <TelepathyQt/TextChannel>
+#include <TelepathyQt/ReceivedMessage>
+
 DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
                                      QObject *parent)
     : QObject(parent), m_dispatchOperation(dispatchOperation)
@@ -78,6 +81,14 @@ void DispatchOperation::onChannelRejected()
     Tp::PendingOperation *operation = m_dispatchOperation->claim();
     connect(operation, SIGNAL(finished(Tp::PendingOperation*)),
             SLOT(onClaimFinished(Tp::PendingOperation*)));
+    Q_FOREACH(const Tp::ChannelPtr &channel, m_dispatchOperation->channels()) {
+        Tp::TextChannelPtr textChannel  = Tp::TextChannelPtr::dynamicCast(channel);
+        if (textChannel) {
+            //ack everything before we close the channel. Otherwise it will reappear
+            textChannel->acknowledge(textChannel->messageQueue());
+        }
+        channel->requestClose();
+    }
 }
 
 void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)

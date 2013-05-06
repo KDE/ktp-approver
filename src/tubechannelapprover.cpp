@@ -124,6 +124,8 @@ void TubeChannelApprover::showNotification(const QString& title, const QString& 
     m_notifierItem.data()->setToolTip(QLatin1String("document-save"),
                                i18n("Incoming %1 request from %2", title, sender->alias()),
                                QString());
+
+    m_notifierItem.data()->contextMenu()->clear(); //calling clear removes the pointless title
     m_notifierItem.data()->contextMenu()->addAction(i18n("Accept"), this, SIGNAL(channelAccepted()));
     m_notifierItem.data()->contextMenu()->addAction(i18n("Reject"), this, SIGNAL(channelRejected()));
     connect(this, SIGNAL(channelAccepted()), SLOT(onChannelAccepted()));

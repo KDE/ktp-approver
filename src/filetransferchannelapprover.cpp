@@ -68,6 +68,8 @@ FileTransferChannelApprover::FileTransferChannelApprover(
     m_notifierItem->setToolTip(QLatin1String("document-save"),
                                i18n("Incoming file transfer from %1", sender->alias()),
                                QString());
+
+    m_notifierItem->contextMenu()->clear(); //calling clear removes the pointless title
     m_notifierItem->contextMenu()->addAction(i18n("Accept"), this, SIGNAL(channelAccepted()));
     m_notifierItem->contextMenu()->addAction(i18n("Reject"), this, SIGNAL(channelRejected()));
     connect(m_notifierItem, SIGNAL(activateRequested(bool,QPoint)), SIGNAL(channelAccepted()));
