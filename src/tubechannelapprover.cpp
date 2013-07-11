@@ -39,7 +39,7 @@ TubeChannelApprover::TubeChannelApprover(const Tp::TubeChannelPtr& channel, QObj
 {
     Q_UNUSED(parent);
 
-    kDebug() << "Incomming tube channel";
+    kDebug() << "Incoming tube channel";
     kDebug() << "\tTube Type:" << channel->channelType();
 
     connect(m_channel.data(), SIGNAL(invalidated(Tp::DBusProxy*,QString,QString)), SLOT(onChannelInvalidated()));
