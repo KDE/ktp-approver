@@ -50,6 +50,7 @@ TextChannelApprover::~TextChannelApprover()
     //destroy the notification
     if (m_notification) {
         m_notification.data()->close();
+        m_notification.data()->deleteLater();
     }
 }
 
@@ -60,7 +61,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
     }
 
     if (!m_notification) {
-        m_notification = new KNotification("new_text_message");
+        m_notification = new KNotification("new_text_message", 0, KNotification::Persistent);
         KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
         m_notification.data()->setComponentData(KComponentData(aboutData));
 
