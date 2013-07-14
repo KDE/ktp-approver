@@ -87,6 +87,7 @@ TubeChannelApprover::~TubeChannelApprover()
     //destroy the notification
     if (m_notification) {
         m_notification.data()->close();
+        m_notification.data()->deleteLater();
     }
 
     if (m_notifierItem) {
@@ -97,7 +98,7 @@ TubeChannelApprover::~TubeChannelApprover()
 void TubeChannelApprover::showNotification(const QString& title, const QString& comment, const QString& icon, const Tp::ContactPtr& sender)
 {
     // incoming_file_transfer = defines notification sound & user preferences
-    m_notification = new KNotification(QLatin1String("incoming_file_transfer"));
+    m_notification = new KNotification(QLatin1String("incoming_file_transfer"), 0, KNotification::Persistent);
     KAboutData aboutData("ktelepathy", 0, KLocalizedString(), 0);
     m_notification.data()->setComponentData(KComponentData(aboutData));
     m_notification.data()->setTitle(title);
@@ -134,6 +135,7 @@ void TubeChannelApprover::onChannelAccepted()
     //destroy the notification
     if (m_notification) {
         m_notification.data()->close();
+        m_notification.data()->deleteLater();
     }
 
     if (!m_service.isNull() && m_service->property(QLatin1String("X-KTp-Cancellable")).toBool()) {

@@ -34,7 +34,7 @@ FileTransferChannelApprover::FileTransferChannelApprover(
     kDebug();
 
     //notification
-    m_notification = new KNotification("incoming_file_transfer");
+    m_notification = new KNotification("incoming_file_transfer", 0, KNotification::Persistent);
     KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
     m_notification.data()->setComponentData(KComponentData(aboutData));
     m_notification.data()->setTitle(i18n("Incoming file transfer"));
@@ -80,6 +80,7 @@ FileTransferChannelApprover::~FileTransferChannelApprover()
     //destroy the notification
     if (m_notification) {
         m_notification.data()->close();
+        m_notification.data()->deleteLater();
     }
 
     //destroy the tray icon
