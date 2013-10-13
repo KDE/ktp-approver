@@ -15,4 +15,4 @@ configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/version.h @ONLY)
 
 add_subdirectory(src)
 
-install(FILES ktp-approver.service DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES ktp-approver.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
