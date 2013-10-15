@@ -2,6 +2,13 @@
 Type=ServiceType
 X-KDE-ServiceType=KTpApprover
 Comment=KTp Approver
+Comment[da]=KTP godkender
+Comment[de]=KTp-Freigabe
+Comment[nl]=Goedkeuringgever van KTp
+Comment[pt]=Aprovação do KTp
+Comment[sv]=KTp-godkännande
+Comment[uk]=Підтвердження викликів KTp
+Comment[x-test]=xxKTp Approverxx
 
 [PropertyDef::X-KTp-ChannelType]
 Type=QString
