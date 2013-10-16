@@ -4,9 +4,13 @@ X-KDE-ServiceType=KTpApprover
 Comment=KTp Approver
 Comment[da]=KTP godkender
 Comment[de]=KTp-Freigabe
+Comment[kk]=KTp мақұлдаушы
 Comment[nl]=Goedkeuringgever van KTp
 Comment[pt]=Aprovação do KTp
+Comment[sk]=KTp schvaľovateľ
+Comment[sl]=Odobritelj za KTp
 Comment[sv]=KTp-godkännande
+Comment[tr]=KTp Onaylayıcı
 Comment[uk]=Підтвердження викликів KTp
 Comment[x-test]=xxKTp Approverxx
 
