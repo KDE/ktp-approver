@@ -27,14 +27,14 @@ ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject
         return new TextChannelApprover(Tp::TextChannelPtr::dynamicCast(channel), parent);
     }
 
-    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_FILE_TRANSFER) {
+    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_FILE_TRANSFER1) {
         return new FileTransferChannelApprover(
                 Tp::FileTransferChannelPtr::dynamicCast(channel),
                 parent);
     }
 
-    if ((channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_STREAM_TUBE) ||
-        (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_DBUS_TUBE)) {
+    if ((channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_STREAM_TUBE1) ||
+        (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_DBUS_TUBE1)) {
         return new TubeChannelApprover(Tp::TubeChannelPtr::dynamicCast(channel), parent);
     }
 
