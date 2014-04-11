@@ -43,7 +43,7 @@ void HandleWithCaller::findHandlers()
     //realistically, dispatch operations only have one channel
     //FIXME if there ever exists a case where a dispatch operation has more
     //than one channels, fix this code to do something more appropriate
-    QString channelType = m_dispatchOperation->channels()[0]->channelType();
+    QString channelType = m_dispatchOperation->channel()->channelType();
 
     QStringList preferredHandlers = group.readEntry(channelType, QStringList());
     QStringList possibleHandlers = m_dispatchOperation->possibleHandlers();

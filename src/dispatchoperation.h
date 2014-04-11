@@ -32,9 +32,6 @@ public:
 
 
 private Q_SLOTS:
-    void onChannelLost(const Tp::ChannelPtr & channel,
-                       const QString & errorName,
-                       const QString & errorMessage);
     void onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
                                         const QString & errorName,
                                         const QString & errorMessage);
@@ -44,7 +41,8 @@ private Q_SLOTS:
 
 private:
     Tp::ChannelDispatchOperationPtr m_dispatchOperation;
-    QHash<Tp::ChannelPtr, ChannelApprover*> m_channelApprovers;
+    Tp::ChannelPtr m_channel;
+    ChannelApprover* m_channelApprover;
 };
 
 #endif // DISPATCHOPERATION_H

@@ -33,33 +33,16 @@ DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dis
     connect(m_dispatchOperation.data(), SIGNAL(invalidated(Tp::DBusProxy*,QString,QString)),
             SLOT(onDispatchOperationInvalidated(Tp::DBusProxy*,QString,QString)));
 
-    Q_FOREACH(const Tp::ChannelPtr & channel, dispatchOperation->channels()) {
-        ChannelApprover *approver = ChannelApprover::create(channel, this);
-        Q_ASSERT(approver);
+      m_channelApprover = ChannelApprover::create(dispatchOperation->channel(), this);
+      Q_ASSERT(m_channelApprover);
 
-        m_channelApprovers.insert(channel, approver);
-
-        connect(approver, SIGNAL(channelAccepted()), SLOT(onChannelAccepted()));
-        connect(approver, SIGNAL(channelRejected()), SLOT(onChannelRejected()));
-    }
-
-    Q_ASSERT(!m_channelApprovers.isEmpty());
+      connect(m_channelApprover, SIGNAL(channelAccepted()), SLOT(onChannelAccepted()));
+      connect(m_channelApprover, SIGNAL(channelRejected()), SLOT(onChannelRejected()));
 }
 
 DispatchOperation::~DispatchOperation()
 {
     kDebug();
-}
-
-void DispatchOperation::onChannelLost(const Tp::ChannelPtr & channel,
-                                      const QString & errorName,
-                                      const QString & errorMessage)
-{
-    kDebug() << "Channel lost:" << errorName << errorMessage;
-
-    ChannelApprover *approver = m_channelApprovers.take(channel);
-    Q_ASSERT(approver);
-    approver->deleteLater();
 }
 
 void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
@@ -81,14 +64,7 @@ void DispatchOperation::onChannelRejected()
     Tp::PendingOperation *operation = m_dispatchOperation->claim();
     connect(operation, SIGNAL(finished(Tp::PendingOperation*)),
             SLOT(onClaimFinished(Tp::PendingOperation*)));
-    Q_FOREACH(const Tp::ChannelPtr &channel, m_dispatchOperation->channels()) {
-        Tp::TextChannelPtr textChannel  = Tp::TextChannelPtr::dynamicCast(channel);
-        if (textChannel) {
-            //ack everything before we close the channel. Otherwise it will reappear
-            textChannel->acknowledge(textChannel->messageQueue());
-        }
-        channel->requestClose();
-    }
+
 }
 
 void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)
@@ -98,11 +74,12 @@ void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)
         return;
     }
 
-    QHashIterator<Tp::ChannelPtr, ChannelApprover*> it(m_channelApprovers);
-    while(it.hasNext()) {
-        it.next();
-        it.key()->requestClose();
+    Tp::TextChannelPtr textChannel  = Tp::TextChannelPtr::dynamicCast(m_dispatchOperation->channel());
+    if (textChannel) {
+        //ack everything before we close the channel. Otherwise it will reappear
+        textChannel->acknowledge(textChannel->messageQueue());
     }
+    m_dispatchOperation->channel()->requestClose();
 }
 
 #include "dispatchoperation.moc"
