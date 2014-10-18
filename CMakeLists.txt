@@ -1,6 +1,6 @@
 project(ktp-approver)
 
-set(KTP_APPROVER_VERSION "0.8.80")
+set(KTP_APPROVER_VERSION "0.9.0")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 cmake_policy(SET CMP0002 OLD)
