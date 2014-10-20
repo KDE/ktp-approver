@@ -37,6 +37,7 @@ Comment[sv]=KTp-godkännande
 Comment[tr]=KTp Onaylayıcı
 Comment[uk]=Підтвердження викликів KTp
 Comment[x-test]=xxKTp Approverxx
+Comment[zh_CN]=KTp Approver
 Comment[zh_TW]=KTp 確認器
 
 [PropertyDef::X-KTp-ChannelType]
