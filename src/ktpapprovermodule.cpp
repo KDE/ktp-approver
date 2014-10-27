@@ -16,13 +16,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "approverdaemon.h"
-#include "ktpapproverfactory.h"
 #include "version.h"
 
 #include <KAboutData>
-#include <KLocale>
-#include <KComponentData>
+#include <KLocalizedString>
 #include <KDEDModule>
+#include <KPluginFactory>
 
 #include <TelepathyQt/Types>
 #include <TelepathyQt/Debug>
@@ -79,12 +78,12 @@ public:
 
     static inline KAboutData aboutData()
     {
-        KAboutData aboutData("ktp-approver", "kded_ktp_approver", KLocalizedString(),
+        KAboutData aboutData(QStringLiteral("ktp-approver"), 0,
                              KTP_APPROVER_VERSION,
-                             KLocalizedString(), KAboutData::License_LGPL,
-                             ki18nc("@info:credit", "(C) 2010, Collabora Ltd."));
-        aboutData.addAuthor(ki18nc("@info:credit", "George Kiagiadakis"),
-                            KLocalizedString(), "george.kiagiadakis@collabora.co.uk");
+                             0, KAboutLicense::LGPL,
+                             i18n("(C) 2010, Collabora Ltd."));
+        aboutData.addAuthor(i18n("George Kiagiadakis"),
+                            QString(), QStringLiteral("george.kiagiadakis@collabora.co.uk"));
         return aboutData;
     }
 
@@ -92,5 +91,6 @@ private:
     Tp::ClientRegistrarPtr m_registrar;
 };
 
-K_PLUGIN_FACTORY_DEFINITION(KTpApproverFactory, registerPlugin<KTpApproverModule>();)
-K_EXPORT_PLUGIN(KTpApproverFactory(KTpApproverModule::aboutData()))
+K_PLUGIN_FACTORY(KTpApproverModuleFactory, registerPlugin<KTpApproverModule>();)
+
+#include "ktpapprovermodule.moc"

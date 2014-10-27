@@ -16,10 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "handlewithcaller.h"
-#include "ktpapproverfactory.h"
+#include "ktp_approver_debug.h"
 #include <KSharedConfig>
 #include <KConfigGroup>
-#include <KDebug>
 #include <TelepathyQt/PendingOperation>
 #include <TelepathyQt/Channel>
 
@@ -37,7 +36,7 @@ HandleWithCaller::HandleWithCaller(const Tp::ChannelDispatchOperationPtr & dispa
 
 void HandleWithCaller::findHandlers()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(KTpApproverFactory::componentData());
+    KSharedConfigPtr config = KSharedConfig::openConfig("ktelepathyrc");
     KConfigGroup group = config->group("HandlerPreferences");
 
     //realistically, dispatch operations only have one channel
@@ -48,8 +47,8 @@ void HandleWithCaller::findHandlers()
     QStringList preferredHandlers = group.readEntry(channelType, QStringList());
     QStringList possibleHandlers = m_dispatchOperation->possibleHandlers();
 
-    kDebug() << "Preferred:" << preferredHandlers;
-    kDebug() << "Possible:" << possibleHandlers;
+    qCDebug(APPROVER) << "Preferred:" << preferredHandlers;
+    qCDebug(APPROVER) << "Possible:" << possibleHandlers;
 
     //intersect the two lists, while respecting the order
     //of preference that was read from the config file
@@ -70,7 +69,7 @@ void HandleWithCaller::findHandlers()
     preferredHandlers.append(possibleHandlers);
 
     m_possibleHandlers = preferredHandlers;
-    kDebug() << "Final:" << m_possibleHandlers;
+    qCDebug(APPROVER) << "Final:" << m_possibleHandlers;
 }
 
 void HandleWithCaller::callHandleWith()

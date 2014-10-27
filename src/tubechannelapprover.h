@@ -20,6 +20,8 @@
 
 #include "channelapprover.h"
 
+#include <QSharedPointer>
+
 #include <KNotification>
 #include <KService>
 #include <TelepathyQt/TubeChannel>
@@ -44,8 +46,8 @@ class TubeChannelApprover : public ChannelApprover
                           const Tp::ContactPtr &sender);
 
     Tp::TubeChannelPtr m_channel;
-    QWeakPointer<KNotification> m_notification;
-    QWeakPointer<KStatusNotifierItem> m_notifierItem;
+    QPointer<KNotification> m_notification;
+    KStatusNotifierItem *m_notifierItem;
     KService::Ptr m_service;
 };
 

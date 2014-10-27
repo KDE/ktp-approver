@@ -2,14 +2,24 @@ project(ktp-approver)
 
 set(KTP_APPROVER_VERSION "0.8.80")
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+
 cmake_policy(SET CMP0002 OLD)
 
-find_package(KDE4 REQUIRED)
-find_package(TelepathyQt4 0.8.9 REQUIRED)
+find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_MODULE_PATH})
 
-include_directories(${KDE4_INCLUDES} ${TELEPATHY_QT4_INCLUDE_DIR})
-add_definitions(${KDE4_DEFINITIONS})
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+
+find_package (Qt5 REQUIRED COMPONENTS Widgets Network)
+find_package (KF5 REQUIRED COMPONENTS DBusAddons Config I18n Notifications Service)
+
+find_package(TelepathyQt5 REQUIRED)
+
+include_directories(${TELEPATHY_QT5_INCLUDE_DIR})
 
 configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/version.h @ONLY)
 

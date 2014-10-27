@@ -1,4 +1,5 @@
 set(ktp_approver_SRCS
+    ktp_approver_debug.cpp
     ktpapprovermodule.cpp
     approverdaemon.cpp
     dispatchoperation.cpp
@@ -11,9 +12,16 @@ set(ktp_approver_SRCS
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-kde4_add_plugin(kded_ktp_approver ${ktp_approver_SRCS})
-target_link_libraries(kded_ktp_approver ${KDE4_KDEUI_LIBS}
-                                        ${TELEPATHY_QT4_LIBRARIES})
+add_library(kded_ktp_approver MODULE ${ktp_approver_SRCS})
+target_link_libraries(kded_ktp_approver Qt5::Widgets
+                                        Qt5::Network
+                                        ${TELEPATHY_QT5_LIBRARIES}
+                                        KF5::DBusAddons
+                                        KF5::ConfigGui
+                                        KF5::I18n
+                                        KF5::Notifications
+                                        KF5::Service
+)
 
 install(TARGETS kded_ktp_approver DESTINATION ${PLUGIN_INSTALL_DIR})
 install(FILES ktp_approver.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)

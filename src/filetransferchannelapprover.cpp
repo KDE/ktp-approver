@@ -16,13 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "filetransferchannelapprover.h"
+#include "ktp_approver_debug.h"
+#include <QMenu>
 #include <KNotification>
 #include <KStatusNotifierItem>
-#include <KLocale>
-#include <KDebug>
-#include <KAboutData>
-#include <KActionCollection>
-#include <KMenu>
+#include <KLocalizedString>
 #include <TelepathyQt/AvatarData>
 #include <TelepathyQt/Contact>
 
@@ -31,12 +29,11 @@ FileTransferChannelApprover::FileTransferChannelApprover(
         QObject *parent)
     : ChannelApprover(parent)
 {
-    kDebug();
+    qCDebug(APPROVER);
 
     //notification
     m_notification = new KNotification("incoming_file_transfer", 0, KNotification::Persistent);
-    KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
-    m_notification.data()->setComponentData(KComponentData(aboutData));
+    m_notification.data()->setComponentName(QStringLiteral("ktelepathy"));
     m_notification.data()->setTitle(i18n("Incoming file transfer"));
 
     Tp::ContactPtr sender = channel->initiatorContact();
@@ -77,7 +74,7 @@ FileTransferChannelApprover::FileTransferChannelApprover(
 
 FileTransferChannelApprover::~FileTransferChannelApprover()
 {
-    kDebug();
+    qCDebug(APPROVER);
 
     //destroy the notification
     if (m_notification) {

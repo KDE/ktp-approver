@@ -41,7 +41,7 @@ private:
     static QSharedPointer<KStatusNotifierItem> getNotifierItem();
     void updateNotifierItemTooltip();
 
-    QWeakPointer<KNotification> m_notification;
+    QPointer<KNotification> m_notification;
     QSharedPointer<KStatusNotifierItem> m_notifierItem;
 };
 

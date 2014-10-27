@@ -16,14 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "textchannelapprover.h"
-#include "ktpapproverfactory.h"
+#include <QMenu>
 #include <KNotification>
 #include <KStatusNotifierItem>
-#include <KLocale>
-#include <KGlobal>
-#include <KDebug>
-#include <KAboutData>
-#include <KMenu>
+#include <KLocalizedString>
 
 #include <TelepathyQt/ReceivedMessage>
 #include <TelepathyQt/AvatarData>
@@ -62,8 +58,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
 
     if (!m_notification) {
         m_notification = new KNotification("new_text_message", 0, KNotification::Persistent);
-        KAboutData aboutData("ktelepathy",0,KLocalizedString(),0);
-        m_notification.data()->setComponentData(KComponentData(aboutData));
+        m_notification.data()->setComponentName(QStringLiteral("ktelepathy"));
 
         Tp::ContactPtr sender = msg.sender();
         if (sender) {
@@ -89,7 +84,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
     m_notification.data()->sendEvent();
 }
 
-K_GLOBAL_STATIC(QWeakPointer<KStatusNotifierItem>, s_notifierItem)
+Q_GLOBAL_STATIC(QWeakPointer<KStatusNotifierItem>, s_notifierItem)
 
 //static
 QSharedPointer<KStatusNotifierItem> TextChannelApprover::getNotifierItem()

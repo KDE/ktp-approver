@@ -18,7 +18,7 @@
 #include "dispatchoperation.h"
 #include "channelapprover.h"
 #include "handlewithcaller.h"
-#include <KDebug>
+#include "ktp_approver_debug.h"
 #include <TelepathyQt/PendingOperation>
 
 #include <TelepathyQt/TextChannel>
@@ -48,14 +48,14 @@ DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dis
 
 DispatchOperation::~DispatchOperation()
 {
-    kDebug();
+    qCDebug(APPROVER);
 }
 
 void DispatchOperation::onChannelLost(const Tp::ChannelPtr & channel,
                                       const QString & errorName,
                                       const QString & errorMessage)
 {
-    kDebug() << "Channel lost:" << errorName << errorMessage;
+    qCDebug(APPROVER) << "Channel lost:" << errorName << errorMessage;
 
     ChannelApprover *approver = m_channelApprovers.take(channel);
     Q_ASSERT(approver);
@@ -67,7 +67,7 @@ void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
                                                        const QString & errorMessage)
 {
     Q_UNUSED(proxy);
-    kDebug() << "Dispatch operation invalidated" << errorName << errorMessage;
+    qCDebug(APPROVER) << "Dispatch operation invalidated" << errorName << errorMessage;
     deleteLater();
 }
 
@@ -94,7 +94,7 @@ void DispatchOperation::onChannelRejected()
 void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)
 {
     if (operation->isError()) {
-        kDebug() << "Claim error:" << operation->errorName() << operation->errorMessage();
+        qCDebug(APPROVER) << "Claim error:" << operation->errorName() << operation->errorMessage();
         return;
     }
 
