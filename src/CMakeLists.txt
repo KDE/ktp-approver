@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"kded_ktp_approver\")
+
 set(ktp_approver_SRCS
     ktp_approver_debug.cpp
     ktpapprovermodule.cpp
