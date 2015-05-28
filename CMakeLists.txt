@@ -1,6 +1,6 @@
 project(ktp-approver)
 
-set(KTP_APPROVER_VERSION "15.04.1")
+set(KTP_APPROVER_VERSION "15.04.2")
 
 cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
