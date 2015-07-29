@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 2.8.9)
 project(ktp-approver)
 
 set(KTP_APPROVER_VERSION "0.9.0")
