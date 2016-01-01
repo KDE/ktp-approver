@@ -1,4 +1,5 @@
 project(ktp-approver)
+include(FeatureSummary)
 
 # KDE Application Version, managed by release script
 set (KDE_APPLICATIONS_VERSION_MAJOR "15")
@@ -31,3 +32,5 @@ configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/version.h @ONLY)
 add_subdirectory(src)
 
 install(FILES ktp-approver.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
