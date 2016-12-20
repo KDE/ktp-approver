@@ -2,7 +2,6 @@
 Type=ServiceType
 X-KDE-ServiceType=KTpApprover
 Comment=KTp Approver
-Comment[ast]=Aprobador KTp
 Comment[bs]=KTp potvrđivač
 Comment[ca]=Aprovador del KTp
 Comment[ca@valencia]=Aprovador del KTp
