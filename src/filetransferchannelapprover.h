@@ -30,7 +30,7 @@ class FileTransferChannelApprover : public ChannelApprover
     Q_OBJECT
 public:
     FileTransferChannelApprover(const Tp::FileTransferChannelPtr & channel, QObject *parent);
-    virtual ~FileTransferChannelApprover();
+    ~FileTransferChannelApprover() override;
 
 private:
     QPointer<KNotification> m_notification;

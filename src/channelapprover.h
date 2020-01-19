@@ -27,8 +27,6 @@ class ChannelApprover : public QObject
 public:
     static ChannelApprover *create(const Tp::ChannelPtr & channel, QObject *parent);
 
-    virtual ~ChannelApprover() {}
-
 Q_SIGNALS:
     void channelAccepted();
     void channelRejected();

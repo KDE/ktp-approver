@@ -32,7 +32,7 @@ class TextChannelApprover : public ChannelApprover
     Q_OBJECT
 public:
     TextChannelApprover(const Tp::TextChannelPtr & channel, QObject *parent);
-    virtual ~TextChannelApprover();
+    ~TextChannelApprover() override;
 
 private Q_SLOTS:
     void onMessageReceived(const Tp::ReceivedMessage & msg);

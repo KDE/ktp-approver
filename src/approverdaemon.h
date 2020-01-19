@@ -27,8 +27,8 @@ public:
     ApproverDaemon(QObject *parent = 0);
 
 protected:
-    virtual void addDispatchOperation(const Tp::MethodInvocationContextPtr<> & context,
-                                      const Tp::ChannelDispatchOperationPtr & dispatchOperation);
+    void addDispatchOperation(const Tp::MethodInvocationContextPtr<> & context,
+                              const Tp::ChannelDispatchOperationPtr & dispatchOperation) override;
 };
 
 #endif // APPROVERDAEMON_H

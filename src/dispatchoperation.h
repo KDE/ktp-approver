@@ -28,7 +28,7 @@ class DispatchOperation : public QObject
     Q_OBJECT
 public:
     DispatchOperation(const Tp::ChannelDispatchOperationPtr & dispatchOperation, QObject *parent);
-    virtual ~DispatchOperation();
+    ~DispatchOperation() override;
 
 
 private Q_SLOTS:

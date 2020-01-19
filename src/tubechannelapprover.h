@@ -34,7 +34,7 @@ class TubeChannelApprover : public ChannelApprover
 
   public:
     TubeChannelApprover(const Tp::TubeChannelPtr &channel, QObject* parent);
-    virtual ~TubeChannelApprover();
+    ~TubeChannelApprover() override;
 
   private Q_SLOTS:
     void onChannelAccepted();
