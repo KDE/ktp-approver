@@ -23,9 +23,7 @@ include(FeatureSummary)
 find_package (Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package (KF5 REQUIRED COMPONENTS DBusAddons Config I18n Notifications Service)
 
-find_package(TelepathyQt5 REQUIRED)
-
-include_directories(${TELEPATHY_QT5_INCLUDE_DIR})
+find_package(TelepathyQt5 0.9.8 REQUIRED)
 
 configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/version.h @ONLY)
 

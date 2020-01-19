@@ -17,7 +17,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_library(kded_ktp_approver MODULE ${ktp_approver_SRCS})
 target_link_libraries(kded_ktp_approver Qt5::Widgets
                                         Qt5::Network
-                                        ${TELEPATHY_QT5_LIBRARIES}
+                                        TelepathyQt5::Core
                                         KF5::DBusAddons
                                         KF5::ConfigGui
                                         KF5::I18n
