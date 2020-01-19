@@ -59,6 +59,9 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
         // The message is already read; nothing to notify about.
         return;
     }
+    if (msg.isSilent()) {
+        return;
+    }
 
     if (!m_notification) {
         m_notification = new KNotification("new_text_message", 0, KNotification::Persistent);
