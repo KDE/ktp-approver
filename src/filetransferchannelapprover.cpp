@@ -32,7 +32,7 @@ FileTransferChannelApprover::FileTransferChannelApprover(
     qCDebug(APPROVER);
 
     //notification
-    m_notification = new KNotification("incoming_file_transfer", 0, KNotification::Persistent);
+    m_notification = new KNotification("incoming_file_transfer", nullptr, KNotification::Persistent);
     m_notification.data()->setComponentName(QStringLiteral("ktelepathy"));
     m_notification.data()->setTitle(i18n("Incoming file transfer"));
 

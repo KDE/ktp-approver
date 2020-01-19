@@ -78,9 +78,9 @@ public:
 
     static inline KAboutData aboutData()
     {
-        KAboutData aboutData(QStringLiteral("ktp-approver"), 0,
+        KAboutData aboutData(QStringLiteral("ktp-approver"), nullptr,
                              KTP_APPROVER_VERSION,
-                             0, KAboutLicense::LGPL,
+                             nullptr, KAboutLicense::LGPL,
                              i18n("(C) 2010, Collabora Ltd."));
         aboutData.addAuthor(i18n("George Kiagiadakis"),
                             QString(), QStringLiteral("george.kiagiadakis@collabora.co.uk"));

@@ -39,7 +39,7 @@ ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject
     }
 
     Q_ASSERT(false);
-    return NULL;
+    return nullptr;
 }
 
 #include "channelapprover.moc"

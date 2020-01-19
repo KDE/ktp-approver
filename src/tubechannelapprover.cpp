@@ -35,7 +35,7 @@
 #include "approverdaemon.h"
 
 TubeChannelApprover::TubeChannelApprover(const Tp::TubeChannelPtr& channel, QObject* parent):
-    ChannelApprover(0),
+    ChannelApprover(nullptr),
     m_channel(channel)
 {
     Q_UNUSED(parent);
@@ -99,7 +99,7 @@ TubeChannelApprover::~TubeChannelApprover()
 void TubeChannelApprover::showNotification(const QString& title, const QString& comment, const QString& icon, const Tp::ContactPtr& sender)
 {
     // incoming_file_transfer = defines notification sound & user preferences
-    m_notification = new KNotification(QLatin1String("incoming_file_transfer"), 0, KNotification::Persistent);
+    m_notification = new KNotification(QLatin1String("incoming_file_transfer"), nullptr, KNotification::Persistent);
     m_notification.data()->setComponentName(QStringLiteral("ktelepathy"));
     m_notification.data()->setTitle(title);
     if (comment.contains(QLatin1String("%1"))) {

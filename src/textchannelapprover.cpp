@@ -64,7 +64,7 @@ void TextChannelApprover::onMessageReceived(const Tp::ReceivedMessage & msg)
     }
 
     if (!m_notification) {
-        m_notification = new KNotification("new_text_message", 0, KNotification::Persistent);
+        m_notification = new KNotification("new_text_message", nullptr, KNotification::Persistent);
         m_notification.data()->setComponentName(QStringLiteral("ktelepathy"));
 
         Tp::ContactPtr sender = msg.sender();
