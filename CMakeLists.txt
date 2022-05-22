@@ -28,4 +28,6 @@ add_subdirectory(src)
 
 install(FILES ktp-approver.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
