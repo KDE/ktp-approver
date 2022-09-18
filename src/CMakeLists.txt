@@ -25,12 +25,12 @@ target_link_libraries(kded_ktp_approver Qt5::Widgets
                                         KF5::Service
 )
 
-install(TARGETS kded_ktp_approver DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES ktp_approver.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
-install(FILES ktp_approverrc DESTINATION ${CONFIG_INSTALL_DIR})
+install(TARGETS kded_ktp_approver DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(FILES ktp_approver.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/kded)
+install(FILES ktp_approverrc DESTINATION ${KDE_INSTALL_CONFDIR})
 
 find_file(DBUS_SEND_PATH dbus-send HINTS /usr/bin)
 configure_file(org.freedesktop.Telepathy.Client.KTp.Approver.service.in
                ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.KTp.Approver.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.KTp.Approver.service
-        DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})

@@ -9,7 +9,7 @@ set(KTP_APPROVER_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VER
 
 project(ktp-approver VERSION ${KTP_APPROVER_VERSION})
 
-find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+find_package(ECM 1.6.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -26,7 +26,7 @@ configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/version.h @ONLY)
 
 add_subdirectory(src)
 
-install(FILES ktp-approver.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES ktp-approver.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR})
 
 ki18n_install(po)
 
