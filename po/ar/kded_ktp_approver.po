@@ -1,0 +1,122 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, ٢٠١٥.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2022-03-12 19:00+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.07.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "صفا الفليج"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "safa1996alfulaij@gmail.com"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "نقل ملفّ وارد"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 يرسل ملفًّا إليك. أتريد قبول نقل الملفّ؟</p><p><i>اسم الملفّ:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "اقبل"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "ارفض"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "نقل ملفّ وارد من %1"
+
+#: ktpapprovermodule.cpp:84
+#, kde-format
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, kde-format
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "رسالة واردة"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "ردّ"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "أغلق"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "ليس لديك أيّة محادثات واردة"
+msgstr[1] "لديك محادثة واحدة واردة"
+msgstr[2] "لديك محادتان واردتان"
+msgstr[3] "لديك %1 محادثات واردة"
+msgstr[4] "لديك %1 محادثةً واردة"
+msgstr[5] "لديك %1 محادثة واردة"
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr "اتّصال وارد مجهول"
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 يريد بدء خدمة مجهولة معك"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "طلب %1 وارد من %2"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "شارك %1 مع %2"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "أوقف مشاركة %1"

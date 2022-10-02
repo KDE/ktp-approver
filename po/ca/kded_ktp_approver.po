@@ -1,0 +1,134 @@
+# Translation of kded_ktp_approver.po to Catalan
+# Copyright (C) 2012-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2012, 2013, 2014, 2021.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2016, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktp-approver\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2021-10-10 20:08+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Josep M. Ferrer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "txemaq@gmail.com"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "Transferència de fitxer entrant"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 us està enviant un fitxer. Accepteu la transferència del fitxer?</"
+"p><p><i>Nom del fitxer:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Accepta"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Rebutja"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "Transferència de fitxer entrant des de %1"
+
+#: ktpapprovermodule.cpp:84
+#, kde-format
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, kde-format
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "Missatge entrant"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "Respon"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "Tanca"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "Teniu 1 conversa entrant"
+msgstr[1] "Teniu %1 converses entrants"
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr "Connexió entrant desconeguda"
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 vol iniciar un servei desconegut amb vós"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "Sol·licitud entrant %1 des de %2"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%1 comparteix amb %2"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "Atura la compartició %1"
+
+#~ msgid "Incoming tube from %1 of an unknown type"
+#~ msgstr "Flux de dades d'entrada des de %1 de tipus desconegut"
+
+#~ msgid "Incoming Request"
+#~ msgstr "Sol·licitud entrant"
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Incoming %1 share request"
+#~ msgstr "Sol·licitud de compartició entrant de %1"

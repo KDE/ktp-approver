@@ -1,0 +1,134 @@
+# Lithuanian translations for l package.
+# Copyright (C) 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the l package.
+#
+# Automatically generated, 2012.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: l 10n\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2013-04-11 20:21+0300\n"
+"Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Liudas Ališauskas"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "liudas@akmc.lt"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "Įeinantis failo persiuntimas"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 siunčia Jums failą. Ar patvirtinate failo perdavimą?</p><p><i>Failo "
+"pavadinimas:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Priimti"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Atmesti"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "Įeinantis failo persiuntimas iš %1"
+
+#: ktpapprovermodule.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "(C) 2010, Collabora Ltd."
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "George Kiagiadakis"
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "Įeinanti žinutė"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "Atsiliepti"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "Turite 1 įeinantį pokalbį"
+msgstr[1] "Turite %1 įeinančius pokalbius"
+msgstr[2] "Turite %1 įeinančių pokalbių"
+msgstr[3] "Turite %1 įeinantį pokalbį"
+
+#: tubechannelapprover.cpp:73
+#, fuzzy, kde-format
+#| msgid "Unknown Incoming Tube"
+msgid "Unknown Incoming Connection"
+msgstr "Nežinomas įeinantis kanalas"
+
+#: tubechannelapprover.cpp:74
+#, fuzzy, kde-format
+#| msgid "%1 wants to start a remote service with you"
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 nori pradėti nuotolinę paslaugą su Jumis"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "Įeinanti %1 užklausa iš %2"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%1 dalintis su %2"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "Stabdyti %1 dalinimąsi"
+
+#~ msgid "Incoming tube from %1 of an unknown type"
+#~ msgstr "Įeinantis kanalas iš %1 yra nežinomo tipo"
+
+#~ msgid "Incoming Request"
+#~ msgstr "Įeinanti užklausa"

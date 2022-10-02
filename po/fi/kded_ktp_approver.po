@@ -1,0 +1,138 @@
+# Copyright © 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the ktp-approver package.
+# Tommi Nieminen <translator@legisign.org>, 2012.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014.
+#
+# KDE Finnish translation sprint participants:
+msgid ""
+msgstr ""
+"Project-Id-Version: kded_ktp_approver\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2014-11-17 17:35+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:21:05+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen, Lasse Liehu"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org,lasse.liehu@gmail.com"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "Saapuva tiedostonsiirto"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 lähettää sinulle tiedoston. Haluatko hyväksyä tiedostonsiirron?</"
+"p><p><i>Tiedostonimi:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Hyväksy"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Torju"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "Saapuva tiedostonsiirto osoitteesta %1"
+
+#: ktpapprovermodule.cpp:84
+#, kde-format
+msgid "(C) 2010, Collabora Ltd."
+msgstr "© 2010 Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, kde-format
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "Saapuva viesti"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "Vastaa"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "Sulje"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "Sinulle on 1 tuleva keskustelu"
+msgstr[1] "Sinulle on %1 tulevaa keskustelua"
+
+# ”Tube” on jätetty kääntämättä, koska käyttäjän ei pitäisi tätä viestiä nähdä ja koska muuten tunnistettavuus voi kärsiä.
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr "Tuntematon saapuva yhteys"
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 haluaa aloittaa tuntemattoman palvelun kanssasi"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr ""
+"Saapuva %1-pyyntö käyttäjältä %2|/|Saapuva $[yhdysmerkki %1 pyyntö] "
+"käyttäjältä %2"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr ""
+"%1-jako käyttäjän %2 kanssa|/|$[yhdysmerkki %1 jako] käyttäjän %2 kanssa"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "Lopeta %1-jakaminen|/|Lopeta $[yhdysmerkki %1 jakaminen]"
+
+# ”Tube” on jätetty kääntämättä, koska käyttäjän ei pitäisi tätä viestiä nähdä ja koska muuten tunnistettavuus voi kärsiä.
+#~ msgid "Incoming tube from %1 of an unknown type"
+#~ msgstr "Tuntemattoman tyyppinen käyttäjältä %1 saapuva tube"
+
+#~ msgid "Incoming Request"
+#~ msgstr "Saapuva pyyntö"
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Incoming %1 share request"
+#~ msgstr "Saapuva %1-jakamispyyntö|/|Saapuva $[yhdysmerkki %1 jakamispyyntö]"

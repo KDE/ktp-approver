@@ -1,0 +1,123 @@
+# Irish translation of kded_ktp_approver
+# Copyright (C) 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kded_ktp_approver package.
+# Kevin Scannell <kscanne@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kded_ktp_approver\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2011-12-28 12:28-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kevin Scannell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kscanne@gmail.com"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr ""
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Glac Leis"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Diúltaigh"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr ""
+
+#: ktpapprovermodule.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "(C) 2010, Collabora Ltd."
+msgid "(C) 2010, Collabora Ltd."
+msgstr "© 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "George Kiagiadakis"
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr ""
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr ""
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr ""
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr ""
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr ""
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr ""
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr ""
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"

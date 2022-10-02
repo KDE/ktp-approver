@@ -1,0 +1,130 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2014-11-14 09:09+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "Inkomende bestandsoverdracht"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 is bezig een bestand te verzenden. Accepteert u de bestandsoverdracht?"
+"</p><p><i>Bestandsnaam:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Accepteren"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Weigeren"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "Inkomende bestandsoverdracht van %1"
+
+#: ktpapprovermodule.cpp:84
+#, kde-format
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, kde-format
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "Inkomend bericht"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "Antwoord"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "Sluiten"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "U hebt 1 inkomende conversatie"
+msgstr[1] "U hebt %1 inkomende conversaties"
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr "Onbekende inkomende verbinding"
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 wil samen met u een onbekende service beginnen"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "Inkomend %1-verzoek van %2"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%1 delen met %2"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "Stop %1 delen"
+
+#~ msgid "Incoming tube from %1 of an unknown type"
+#~ msgstr "Inkomende buis van %1 van een onbekend type"
+
+#~ msgid "Incoming Request"
+#~ msgstr "Inkomend verzoek"
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Incoming %1 share request"
+#~ msgstr "Inkomend verzoek %1 om te delen"

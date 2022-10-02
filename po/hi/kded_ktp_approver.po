@@ -1,0 +1,118 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktp-approver package.
+#
+# Sameer Singh <lumarzeli30@gmail.com>, 2021.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktp-approver\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2021-06-27 15:27+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "समीर सिंह, राघवेंद्र कामत"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lumarzeli30@gmail.com, raghu@raghukamath.com"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "आगंतु फ़ाइल स्थानांतरण"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 आपको एक फ़ाइल भेज रहे हैं. क्या आप फ़ाइल स्थानांतरण से सहमत हैं?</ p><p><i>फ़ाइल का "
+"नाम:</i> %2 </p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "स्वीकारें"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "नकारें"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "%1 से आगंतु फ़ाइल स्थानांतरण"
+
+#: ktpapprovermodule.cpp:84
+#, kde-format
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) २०१०, कोलैबोरा एलटीडी."
+
+#: ktpapprovermodule.cpp:85
+#, kde-format
+msgid "George Kiagiadakis"
+msgstr "जॉर्ज कियैगियैडैकिस"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "आगंतु संदेश"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "उत्तर दें"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "बंद करें"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "आपके पास १ आगंतु वार्तालाप है"
+msgstr[1] "आपके पास %1 आगंतु वार्तालाप हैं"
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr "अज्ञात आगंतु कनेक्शन"
+
+#: tubechannelapprover.cpp:74
+#, kde-format
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 आपके साथ एक अज्ञात सेवा प्रारंभ करना चाहता है"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "%2 द्वारा %1 आगंतु अनुरोध"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%1, %2 के साथ साझा करें"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "%1 साझेदारी बन्द करें"

@@ -1,0 +1,138 @@
+# translation of kded_ktp_approver.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2012.
+# Sophea <sophea@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kded_ktp_approver\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2012-07-03 08:11+0700\n"
+"Last-Translator: Sophea <sophea@khmeros.info>\n"
+"Language-Team: Khmer <>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
+"ratanak@khmeros.info,sophea@khmeros.info"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "ការ​ផ្ទេរ​ឯកសារ​ចូល"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 កំពុង​ផ្ញើ​ឯកសារ​ឲ្យ​អ្នក ។ តើ​អ្នក​ព្រម​ទទួល​ការ​ផ្ទេរ​ឯកសារ​ដែរ​ឬទេ ?</p><p><i>ឈ្មោះ​ឯកសារ ៖"
+"</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "ព្រម​ទទួល"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "ច្រានចោល"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "ការ​ផ្ទេរ​ឯកសារ​ចូល​ពី %1"
+
+#: ktpapprovermodule.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "(C) 2010, Collabora Ltd."
+msgid "(C) 2010, Collabora Ltd."
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១០ ដោយ Collabora Ltd ។"
+
+#: ktpapprovermodule.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "George Kiagiadakis"
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "សារ​ចូល"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "ឆ្លើយតប"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "អ្នក​មាន %1 ការ​សន្ទនា​ចូល"
+
+#: tubechannelapprover.cpp:73
+#, kde-format
+msgid "Unknown Incoming Connection"
+msgstr ""
+
+#: tubechannelapprover.cpp:74
+#, fuzzy, kde-format
+#| msgid "<p>%1 wants to start a %2 sharing session with you</p>"
+msgid "%1 wants to start an unknown service with you"
+msgstr "<p>%1 ចង់​ចាប់ផ្ដើម​សម័យ​ចែករំលែក %2 ជាមួយ​អ្នក</p>"
+
+#: tubechannelapprover.cpp:126
+#, fuzzy, kde-format
+#| msgid "Incoming share request from %1"
+msgid "Incoming %1 request from %2"
+msgstr "សំណើ​ចែករំលែក​ចូល​ពី %1"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%1 ចែករំលែក​ជាមួយ %2"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "បញ្ឈប់​ការ​ចែករំលែក %1"
+
+#, fuzzy
+#~| msgid "Incoming share request"
+#~ msgid "Incoming Request"
+#~ msgstr "សំណើ​ចែករំលែក​ចូល"
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Incoming %1 share request"
+#~ msgstr "សំណើ​ចែករំលែក %1 ចូល"

@@ -1,0 +1,136 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-01-20 03:19+0100\n"
+"PO-Revision-Date: 2013-09-25 03:56+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: filetransferchannelapprover.cpp:37 filetransferchannelapprover.cpp:64
+#, kde-format
+msgid "Incoming file transfer"
+msgstr "Кіріс файл тасымалы"
+
+#: filetransferchannelapprover.cpp:40
+#, kde-format
+msgid ""
+"<p>%1 is sending you a file. Do you accept the file transfer?</"
+"p><p><i>Filename:</i> %2</p>"
+msgstr ""
+"<p>%1 Сізге файл жібермек. Қабылдайсыз ба?</p><p><i>Файл атауы:</i> %2</p>"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:70
+#: textchannelapprover.cpp:87 tubechannelapprover.cpp:112
+#: tubechannelapprover.cpp:130
+#, kde-format
+msgid "Accept"
+msgstr "Қабылдау"
+
+#: filetransferchannelapprover.cpp:51 filetransferchannelapprover.cpp:71
+#: tubechannelapprover.cpp:112 tubechannelapprover.cpp:131
+#, kde-format
+msgid "Reject"
+msgstr "Бас тарту"
+
+#: filetransferchannelapprover.cpp:66
+#, kde-format
+msgid "Incoming file transfer from %1"
+msgstr "%1 дегеннен келетін файл"
+
+#: ktpapprovermodule.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "(C) 2010, Collabora Ltd."
+msgid "(C) 2010, Collabora Ltd."
+msgstr "(C) 2010, Collabora Ltd."
+
+#: ktpapprovermodule.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:credit"
+#| msgid "George Kiagiadakis"
+msgid "George Kiagiadakis"
+msgstr "George Kiagiadakis"
+
+#: textchannelapprover.cpp:79
+#, kde-format
+msgid "Incoming message"
+msgstr "Хабарлама келді"
+
+#: textchannelapprover.cpp:82
+#, kde-format
+msgid "Respond"
+msgstr "Жауап"
+
+#: textchannelapprover.cpp:88
+#, kde-format
+msgid "Close"
+msgstr "Жабу"
+
+#: textchannelapprover.cpp:122
+#, kde-format
+msgid "You have 1 incoming conversation"
+msgid_plural "You have %1 incoming conversations"
+msgstr[0] "%1 келген әңгіме талабы"
+
+#: tubechannelapprover.cpp:73
+#, fuzzy, kde-format
+#| msgid "Unknown Incoming Tube"
+msgid "Unknown Incoming Connection"
+msgstr "Беймәлім кіріс арнасы"
+
+#: tubechannelapprover.cpp:74
+#, fuzzy, kde-format
+#| msgid "%1 wants to start a remote service with you"
+msgid "%1 wants to start an unknown service with you"
+msgstr "%1 Сізбен бір қашық сеансты бастауды қалайды"
+
+#: tubechannelapprover.cpp:126
+#, kde-format
+msgid "Incoming %1 request from %2"
+msgstr "%2 дегеннен %1 талап келді"
+
+#: tubechannelapprover.cpp:145
+#, kde-format
+msgid "%1 share with %2"
+msgstr "%2 дегенмен %1 ортақ сеансы"
+
+#: tubechannelapprover.cpp:148
+#, kde-format
+msgid "Stop %1 Sharing"
+msgstr "%1 ортақтасуын тоқтату"
+
+#~ msgid "Incoming tube from %1 of an unknown type"
+#~ msgstr "%1 дегеннің кіріс арнасынын түрі беймәлім"
+
+#~ msgid "Incoming Request"
+#~ msgstr "Сырттан келген талап"
+
+#~ msgctxt "Acronym for the secure shell service"
+#~ msgid "SSH"
+#~ msgstr "SSH"
+
+#~ msgid "Incoming %1 share request"
+#~ msgstr "Сырттан келген %1 ортақтасу талабы"
