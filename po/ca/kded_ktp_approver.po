@@ -119,16 +119,3 @@ msgstr "%1 comparteix amb %2"
 #, kde-format
 msgid "Stop %1 Sharing"
 msgstr "Atura la compartició %1"
-
-#~ msgid "Incoming tube from %1 of an unknown type"
-#~ msgstr "Flux de dades d'entrada des de %1 de tipus desconegut"
-
-#~ msgid "Incoming Request"
-#~ msgstr "Sol·licitud entrant"
-
-#~ msgctxt "Acronym for the secure shell service"
-#~ msgid "SSH"
-#~ msgstr "SSH"
-
-#~ msgid "Incoming %1 share request"
-#~ msgstr "Sol·licitud de compartició entrant de %1"
